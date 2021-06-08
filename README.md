@@ -17,6 +17,9 @@ Intereses: ¿Qué intereses tienen los clientes para quienes el producto es rele
 https://www.catycan.com/
 https://mispichos.com/?gclid=EAIaIQobChMIr43Uy9iG8QIVjQ-RCh33ggm5EAAYASAAEgJ1CfD_BwE
 https://www.timberline.com.ar/
+https://www.puppis.com.ar/
+https://casperpetstore.com.ar/?gclid=EAIaIQobChMIvs7Yi9mG8QIVUwyRCh1GaQBQEAAYAyAAEgJMMPD_BwE
+https://centropet.com/
 
 # Listado del grupo:            
 
