@@ -4,13 +4,7 @@
 
 # Publico objetivo:
 
-Edad: ¿Para qué grupo de edad se desarrolló el producto?
-Género: ¿Es el género relevante para la definición del público objetivo?
-Lugar de residencia: ¿Dónde viven los clientes a los que se dirige el producto? ¿En el campo o en la ciudad? ¿En qué provincia o ciudad se encuentran?
-Ocupación: ¿El producto solo es interesante para ciertos grupos ocupacionales?
-Educación: ¿Qué nivel de educación tienen los clientes a los que les atrae el producto?
-Estado civil: ¿El producto está más dirigido a solteros, parejas o familias?
-Intereses: ¿Qué intereses tienen los clientes para quienes el producto es relevante?
+Esta dirigido a un publico de cualquier edad, genero, ocupacion, estado civil o nivel de educación pero con un claro interes en los animales y en particular las mascotas. Preferentemente deben residir dentro de la zona de envio a domicilio aunque no es excluyente ya que se puede enviar a todo el pais por correo y encomienda.
 
 # Paginas de referencia en las que se basa el proyecto:
 
