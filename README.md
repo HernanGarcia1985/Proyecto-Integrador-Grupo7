@@ -1,10 +1,11 @@
 # Proyecto-Integrador-Grupo7
 
 # Temática y descripción del sitio:
+Venta de productos y servicios para mascotas. 
 
 # Publico objetivo:
 
-Esta dirigido a un publico de cualquier edad, genero, ocupacion, estado civil o nivel de educación pero con un claro interes en los animales y en particular las mascotas. Preferentemente deben residir dentro de la zona de envio a domicilio aunque no es excluyente ya que se puede enviar a todo el pais por correo y encomienda.
+Esta dirigido a un publico de cualquier edad, genero, lugar de residencia, ocupacion, estado civil o nivel de educación pero con un claro interes en los animales y en particular las mascotas.
 
 # Paginas de referencia en las que se basa el proyecto:
 
