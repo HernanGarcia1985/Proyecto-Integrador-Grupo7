@@ -31,6 +31,8 @@ Hernan Garcia: Tengo 35 años. Soy técnico en electrónica. Me acerque al curso
 
 Facundo Garrote: Soy Facundo, tengo 28 años. Me gustan los autos de competición y corro de manera oficial para un equipo en los eSport. Resido en CABA. Actualmente con muchas ganas de aprender programación.
 
+Maria Florencia Urruzuno: Tengo 32 años, soy Contadora Pública. Me gusta mucho entrenar en casa (arranque con la Pandemia). Vivo en Capital Federal.
+
 # Tablero de trabajo:
 
 https://trello.com/invite/b/IyeHr0TP/b27ac8b179b0a01fd5be73e53a1c926f/proyecto-integrador-grupo7
