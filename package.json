@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-integrador-grupo7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HernanGarcia1985/Proyecto-Integrador-Grupo7.git"
+  },
+  "author": "Hernan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HernanGarcia1985/Proyecto-Integrador-Grupo7/issues"
+  },
+  "homepage": "https://github.com/HernanGarcia1985/Proyecto-Integrador-Grupo7#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
