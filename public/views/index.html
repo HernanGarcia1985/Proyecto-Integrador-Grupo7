@@ -11,10 +11,54 @@
     <link rel="stylesheet" href="../CSS/style.css"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" type="text/css" href="CSS/producto.css">
+<link rel="stylesheet" type="text/css" href="CSS/product_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
     
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body >
+  <header class="header">
+		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><img src=images/logo.jpeg width="150" class="img-fluid"></div>
+		  <nav class="main_nav">
+				<ul>
+					<li><a href="#">PERRO</a></li>
+					<li><a href="#">GATO</a></li>
+					<li><a href="#">Promociones</a></li>
+					<li><a href="#">Sucursales</a></li>
+					<li><a href="#">Envíos</a></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</nav>
+<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
+		</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="logo menu_mm"><a href="#">PET FRIENDLY MARKET</a></div>
+		<div class="search">
+			<form action="#">
+				<input type="search" class="search_input menu_mm" required="required">
+				<button type="submit" id="search_button_menu" class="search_button menu_mm"><img class="menu_mm" src="images/magnifying-glass.svg" alt=""></button>
+			</form>
+		</div>
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="#">INICIO</a></li>
+				<li class="menu_mm"><a href="#">PERRO</a></li>
+				<li class="menu_mm"><a href="#">GATO</a></li>
+				<li class="menu_mm"><a href="#">PROMOCIONES</a></li>
+				<li class="menu_mm"><a href="#">SUCURSALES</a></li>
+				<li class="menu_mm"><a href="#">ENVÍO</a></li>
+				<li class="menu_mm"><a href="#">CONTACTO</a></li>
+			</ul>
+		</nav>
+	</div>
 
     <div id="carousel-container" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -57,14 +101,15 @@
         
 
           <div class="card">
-            <img src="../images/casita.jpg" class="card-img-top" alt="...">
+            <img src="../images/comedor_1.jpg"  width= "100" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Nombre del Producto</h5>
-              <p class="card-text">Precio</p>
+              <h5 class="card-title">Comedero - Bebedero Para Gato</h5>
+              <p class="card-text">$1.693</p>
             </div>
-            <div class="boton-comprar">
-              <button class="btn-primary" type="button">Comprar</button>
-            </div>
+            <a href="./producto.html"><div class="boton-comprar">
+              <button class="btn-primary" type="button"> Comprar</button>
+            </div></a>
+
           </div>
      
 
