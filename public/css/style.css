@@ -1,0 +1,85 @@
+
+*{
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+#carousel-container{
+    display:block;
+    padding: 15px;
+    
+}
+
+.card-container{
+    display: flex;
+    background-color: #336699;
+    margin-top: 15px;
+    padding: 15px;
+    
+	
+	
+}
+.card{
+    background-color: white;
+    justify-content: space-around;
+    width: 25%;
+    margin: 10px;
+    text-align: center; 
+    font-size: 16px;
+    border-radius: 8px;
+    
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: invert(1); /*me cambia de color el icono*/
+    
+}
+
+
+
+
+.titulo{
+    text-align: center;
+    padding: 15px;
+    color: #336699;
+    font-weight: bold;
+
+}
+
+.boton-comprar{
+    padding: 15px;
+    
+}
+
+.btn-primary{
+    background-color: #336699;
+    padding: 5px;
+    border: none;
+
+}
+
+@media only screen and (max-width: 600px) {/*desde este ancho hacia arriba - phone*/
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: center;
+    }
+
+    .card{
+        justify-content: space-around;
+        width: 80%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+    }
+
+
+}
