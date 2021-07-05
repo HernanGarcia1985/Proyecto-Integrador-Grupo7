@@ -1,0 +1,165 @@
+*{
+    padding: 0%;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.carrito{
+    width: 75vw;
+    display: flex;
+    margin: 5px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.tabla{
+    text-align:center
+    /*vertical-align
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;*/
+}
+
+.encabezado th{
+    border-bottom-color: gray ;
+}
+
+#imagen{
+    max-width: 20vw;
+
+}
+
+#titulo-carrito{
+    margin: 10px;
+    font-size: 1em;
+}
+
+/*.columna1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.columna2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columna3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columna4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eliminar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-cantidad{
+    align-self: center;
+    justify-self: center;
+    margin-top: 20px;
+}
+
+#atributos{
+    padding: 5px;
+}*/
+
+/*main div section img{
+    flex-grow: 0.245;
+}
+
+main div section input{
+    flex-grow: 0.245;
+}
+
+main div section h6{
+    flex-grow: 0.245;
+}
+
+#icono-eliminar{
+    flex-grow: 0.02;
+}*/
+
+#boton-eliminar{
+    display: none;
+}
+
+.total{
+    justify-content: flex-end;
+    margin: 5px 5px 0px 5px;
+    padding: 10px;
+    border-top: gray solid 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.total h4{
+    margin: 0px 5px;
+}
+
+.pagar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 5px;
+    border-top: gray solid 2px;
+    border-bottom: gray solid 2px;
+}
+
+#boton-pagar{
+    flex-grow: 0.25;
+    max-width: 50px;
+    margin: 5px 30px;
+    padding: 5px;
+    background-color: #1259c3;
+}
+
+#boton-seguir{
+    flex-grow: 0.25;
+    max-width: 150px;
+    margin: 5px 30px;
+    padding: 5px;
+    background-color: #1259c3;
+}
+
+.interesar{
+    display: none;
+    justify-content: space-around;
+
+}
+
+@media (min-width:769px){
+
+    .interesar{
+        display:flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }  
+
+    #boton-eliminar{
+        display:inline;
+    }
+
+    #icono-eliminar{
+        display: none;
+    }
+
+}
