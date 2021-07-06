@@ -18,27 +18,30 @@
     
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-<body >
-  <header class="header">
-		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><img src=images/logo.jpeg width="150" class="img-fluid"></div>
-		  <nav class="main_nav">
-				<ul>
-					<li><a href="#">PERRO</a></li>
-					<li><a href="#">GATO</a></li>
-					<li><a href="#">Promociones</a></li>
-					<li><a href="#">Sucursales</a></li>
-					<li><a href="#">Envíos</a></li>
-					<li><a href="#">Contacto</a></li>
-				</ul>
-			</nav>
-<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
-		</div>
-	</header>
+
+<body id="fondobody">
+
+  <header id="header">
+    <nav id="container0">
+        <ul class="item2"> <img id="logo" src="./img/logo.jpeg" width="150px"> </ul>
+        <ul class="item2"> Perro </ul>
+        <ul class="item2"> Gato </ul>
+        <ul class="item2">Promociones </ul>
+        <ul class="item2">Sucursales</ul>
+        <ul class="item2"> Envios </ul>
+        <ul class="item2"> Contacto </ul>
+        <ul class="item2"> <input class="buscador" type="text" placeholder="Buscar">  </input> </ul>
+        <ul class="item2"> <button class="botoncito"> Mi cuenta </button> </ul> 
+        <ul class="item2"> <a href="carrito.html"><button class="botoncito"> Mi carrito </button> </a></ul>
+    </nav>
+    <hr class="linea">
+
+</header>
+
 
 	<!-- Menu -->
 
-	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+	<!--<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="logo menu_mm"><a href="#">PET FRIENDLY MARKET</a></div>
 		<div class="search">
@@ -58,18 +61,18 @@
 				<li class="menu_mm"><a href="#">CONTACTO</a></li>
 			</ul>
 		</nav>
-	</div>
+	</div> -->
 
     <div id="carousel-container" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./images/group-puppies.jpg" class="d-block w-100" alt="puppies">
+            <img src="img/group-puppies.jpg" class="d-block w-100" alt="puppies">
           </div>
           <div class="carousel-item">
-            <img src="../images/dog-woman.jpg" class="d-block w-100" alt="dog">
+            <img src="img/dog-woman.jpg" class="d-block w-100" alt="dog">
           </div>
           <div class="carousel-item">
-            <img src="../images/set-of-dog.jpg" class="d-block w-100" alt="set-of-dog">
+            <img src="img/set-of-dog.jpg" class="d-block w-100" alt="set-of-dog">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -89,7 +92,7 @@
       <div class="card-container" >
         
           <div class="card">
-            <img src="../images/set-perro.jpg" class="card-img-top" alt="...">
+            <img src="../img/set-perro.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Nombre del Producto</h5>
               <p class="card-text">Precio</p>
@@ -101,7 +104,7 @@
         
 
           <div class="card">
-            <img src="../images/comedor_1.jpg"  width= "100" class="card-img-top" alt="...">
+            <img src="../img/comedor_1.jpg"  width= "100" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Comedero - Bebedero Para Gato</h5>
               <p class="card-text">$1.693</p>
@@ -114,7 +117,7 @@
      
 
           <div class="card">
-            <img src="../images/set-perro.jpg" class="card-img-top" alt="...">
+            <img src="../img/set-perro.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Nombre del Producto</h5>
               <p class="card-text">Precio</p>
@@ -126,7 +129,7 @@
 
           
             <div class="card">
-              <img src="../images/casita.jpg" class="card-img-top" alt="...">
+              <img src="../img/casita.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Nombre del Producto</h5>
                 <p class="card-text">Precio</p>
@@ -138,10 +141,29 @@
 
     </div>
 
-      
-
-    
- 
+    <footer class="footer">
+      <hr class="linea">
+      <div class="container">
+          <div class="row">
+              <div class="col text-center">
+                  <div class="footer_logo"></div>
+                  <nav class="footer_nav"> </nav>
+                  <div class="footer_social">
+                      <ul>
+                          <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                          <li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                          <li><a href="#"><i class="fab fa-instagram"  aria-hidden="true"></i></a></li>
+                          <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="copyright">
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+  
+                </div>
+              </div>
+          </div>
+      </div>
+  </footer> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
       
 </body> 

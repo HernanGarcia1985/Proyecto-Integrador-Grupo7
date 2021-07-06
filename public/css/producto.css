@@ -7,7 +7,6 @@
 }
 body
 {
-	font-family: 'Montserrat';
 	font-size: 14px;
 	font-weight: 400;
 	background: #FFFFFF;
@@ -28,7 +27,6 @@ ul
 }
 p
 {
-	font-family: "Montserrat";
 	font-size: 14px;
 	line-height: 2;
 	font-weight: 400;
@@ -85,7 +83,6 @@ h4{font-size: 18px;}
 h5{font-size: 14px;}
 h1, h2, h3, h4, h5, h6
 {
-	font-family: "Montserrat";
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -203,7 +200,6 @@ section
 }
 .section_title
 {
-	font-family: 'Montserrat';
 	font-size: 60px;
 	text-transform: uppercase;
 	color: #2f2f2f;
@@ -281,7 +277,6 @@ section
 
 .logo a
 {
-	font-family: 'Montserrat';
 	font-size: 30px;
 	color: #2f2f2f;
 	
@@ -506,7 +501,6 @@ section
 }
 .home_title
 {
-	font-family: 'Montserrat';
 	font-size: 36px;
 	color: #FFFFFF;
 	line-height: 0.75;
@@ -519,13 +513,11 @@ section
 {
 	display: inline-block;
 	position: relative;
-	font-family: 'Montserrat';
 	font-size: 16px;
 	color: #FFFFFF;
 }
 .breadcrumbs ul li a
 {
-	font-family: 'Montserrat';
 	font-size: 16px;
 	color: #FFFFFF;
 	-webkit-transition: all 200ms ease;
@@ -670,7 +662,6 @@ section
 {
 	display: inline-block;
 	position: relative;
-	font-family: 'Montserrat';
 	font-size: 16px;
 	color: #232323;
 }
@@ -687,7 +678,6 @@ section
 }
 .current_page ul li a
 {
-	font-family: 'Montserrat';
 	font-size: 16px;
 	color: #232323;
 	-webkit-transition: all 200ms ease;
@@ -987,7 +977,6 @@ section
 }
 .reviews_title
 {
-	font-family: 'Montserrat';
 	font-size: 30px;
 	color: #232323;
 	text-transform: uppercase;
@@ -1071,7 +1060,6 @@ section
 }
 .review_form_title
 {
-	font-family: 'Montserrat';
 	font-size: 30px;
 	color: #232323;
 	text-transform: uppercase;
@@ -1182,6 +1170,7 @@ section
 .footer
 {
 	padding-top: 80px;
+	background-color: white;
 }
 .footer_nav
 {
@@ -1244,7 +1233,38 @@ section
 {
 	margin-top: 56px;
 	padding-bottom: 13px;
-	font-family: 'Montserrat', serif;
 	font-size: 12px;
 	color: #527CA3;
 }
+
+#fondobody{
+	background-color: #145b82;
+}
+
+#fondomain{
+	background-color: white;
+}
+
+#header{
+	background-color: white;
+	margin-top: 15px;
+}
+.botoncito{
+	background-color: #009cf6;
+	color: white;
+	padding: 7px;
+	border-color: white;
+ }
+
+ .item2{
+	color:#004360;
+	padding: 0px;
+}
+
+#container0{
+	display: flex;
+	margin-top: 45px;
+	align-items: center;
+	justify-content: space-around;  
+}
+
