@@ -1,6 +1,12 @@
-const express = require('express')
-const app = express()
+const productsRouters = require('./routes/productsRouter');
+const usersRouters = require ('./routes/usersRouter')
+const express = require('express');
+const app = express();
 const path = require('path');
+
+app.use('/', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
+app.use('/', usersRouters); 
+
 
 app.get('/', (req,res) =>{
   
@@ -8,28 +14,14 @@ app.get('/', (req,res) =>{
   console.log(__dirname)
 });
 
-app.get('/producto', (req,res) =>{
-  
-  res.sendFile(path.join(__dirname, './views/producto.html'));
-  console.log(__dirname)
-});
-
 app.get('/carrito', (req,res) =>{
   res.sendFile(path.join(__dirname, './views/carrito.html'));
 });
 
-app.get('/crear_cuenta', (req,res) =>{
-  res.sendFile(path.join(__dirname, './views/crear_cuenta.html'));
-});
- 
-
-app.get('/login', (req,res) =>{
-  res.sendFile(path.join(__dirname, './views/login.html'));
-});
 
 
 app.use(express.static(path.join(__dirname, './public')));
-app.use(express.static(path.join(__dirname, './views')));
+
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Corriendo servidor en el puerto 3000");
