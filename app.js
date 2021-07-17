@@ -11,14 +11,13 @@ app.use('/', productsRouters);  // se concatenan las rutas del primer y segundo 
 app.use('/', usersRouters); 
 
 
-app.get('/', (req,res) =>{
+app.get('/', (req,res) =>{	
+    res.render('index');
   
-  res.sendFile(path.resolve(__dirname, './views/index.ejs'));
-  console.log(__dirname)
 });
 
 app.get('/carrito', (req,res) =>{
-  res.sendFile(path.resolve(__dirname, './views/carrito.ejs'));
+  res.render('carrito');
 });
 
 app.use(express.static(path.resolve(__dirname, './public')));

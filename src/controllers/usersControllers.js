@@ -5,11 +5,11 @@ const usersControllers =
         },
 
         login: (req, res) => {
-                res.render("users/login");
+                res.render('users/login');
         },   
 
         crear_cuenta: (req, res) => {
-                res.render("users/crear_cuenta");
+                res.render('users/crear_cuenta');
         }
 }
 

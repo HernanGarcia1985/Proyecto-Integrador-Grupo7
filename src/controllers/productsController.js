@@ -5,14 +5,14 @@ const productsControllers =
         },
 
         crear_producto: (req, res) => {
-                res.render("products/crear_producto");
+                res.render('products/crear_producto');
         },   
 
         listado_producto: (req, res) => {
-                res.render("products/listado_producto");
+                res.render('products/listado_producto');
         },
         editar_producto: (req, res) => {
-                res.render("products/editar_producto");
+                res.render('products/editar_producto');
         }
 }
 
