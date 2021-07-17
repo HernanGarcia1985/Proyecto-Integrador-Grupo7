@@ -1,8 +1,9 @@
-const productsRouters = require('./routes/productsRouter');
-const usersRouters = require ('./routes/usersRouter');
+const productsRouters = require('./src/routes/productsRouter');
+const usersRouters = require ('./src/routes/usersRouter');
 const express = require('express');
 const app = express();
 const path = require('path');
+
 
 app.set('view engine', 'ejs');
 
