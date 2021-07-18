@@ -1,4 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <%- include('./partials/head') %>   
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<body id="fondobody">
+
+    <header id="header">
+      <%- include('./partials/header') %>
+      
+  </header>
+
+<div class="container">
+	
+
+<div class="row heading">
+    <h2 class="sub-heading">Productos</h2>
+</div>
+
+<div class="container-fluid" id="inventory">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                 
+                    <img class="img-fluid" src="./img/alimento.jpg?w=400" alt="Card image cap">
+                    <button class="btn view-btn">Alimento Raza</button>
+                                     
+                
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/absorsol piedras.jpg?w=400" alt="Card image cap">
+                <button class="btn view-btn">Piedras Sanitarias</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/comedor_1.jpg?w=400" alt="Card image cap">
+                <button class="btn view-btn">Comedero - Bebedero Para Gato</button>
+                
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/biscuits-de-pollo-x-500-grs-doy-pack-golocan.jpg?w=400" alt="Card image cap">
+                <button class="btn btn-danger view-btn">Trocitos de pollo</button>               
+                <div class="ribbon">
+                    <span>Popular</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/biscuits-de-pollo-x-500-grs-doy-pack-golocan.jpg?w=400" alt="Card image cap">
+                <button class="btn btn-danger view-btn">Trocitos de pollo</button>               
+                <div class="ribbon">
+                    <span>Popular</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/biscuits-de-pollo-x-500-grs-doy-pack-golocan.jpg?w=400" alt="Card image cap">
+                <button class="btn btn-danger view-btn">Trocitos de pollo</button>               
+                <div class="ribbon">
+                    <span>Popular</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img class="img-fluid" src="./img/biscuits-de-pollo-x-500-grs-doy-pack-golocan.jpg?w=400" alt="Card image cap">
+                <button class="btn btn-danger view-btn">Trocitos de pollo</button>               
+                <div class="ribbon">
+                    <span>Popular</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+    </body>
+    <footer class="footer">
+        <%- include ('./partials/footer') %>
+    </footer> 
+    </body>

@@ -1,88 +1,124 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="./css/crearcuenta.css">
-        <link rel="stylesheet" href="boton.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    </head>
-    <body id="fondobody">
+<html lang="en">
+<head>
+  <%- include('./partials/head') %>   
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+   
+<body id="fondobody">
 
     <header id="header">
-            <nav id="container0">
-                <ul class="item2"> <a href= "index.html"><img id="logo" src="./img/logo.jpeg" width="150px"> </a></ul>
-                <ul class="item2"> Perro </ul>
-                <ul class="item2"> Gato </ul>
-                <ul class="item2">Promociones </ul>
-                <ul class="item2">Sucursales</ul>
-                <ul class="item2"> Envios </ul>
-                <ul class="item2"> Contacto </ul>
-                <ul class="item2"> <input class="buscador" type="text" placeholder="Buscar">  </input> </ul>
-                <ul class="item2"> <a href="login.html"> <button class="botoncito"> Mi cuenta </button> </ul> </a>
-                <ul class="item2"> <a href="carrito.html"><button class="botoncito"> Mi carrito </button> </a></ul>
-            </nav>
-            <hr class="linea">
+      <%- include('./partials/header') %>
+      
+  </header>
+ 
 
-    </header>
+  <form class="form-horizontal">
+  <fieldset>
+  
+  <!-- Form Name -->
+  <legend>CREAR PRODUCTO</legend>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_id">ID PRODUCTO</label>  
+    <div class="col-md-4">
+    <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_name">NOMBRE DE PRODUCTO</label>  
+    <div class="col-md-4">
+    <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_name_fr">DESCRIPCIÓN CORTA DE PRODUCTO</label>  
+    <div class="col-md-4">
+    <input id="product_name_fr" name="product_name_fr" placeholder="PRODUCT DESCRIPTION FR" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
+  
+  <!-- Select Basic -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_categorie">CATEGORÍA DE PRODUCTO</label>
+    <div class="col-md-4">
+      <select id="product_categorie" name="product_categorie" class="form-control">
+      </select>
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="available_quantity">CANTIDADES</label>  
+    <div class="col-md-4">
+    <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_weight">PESO</label>  
+    <div class="col-md-4">
+    <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
+  
+  <!-- Textarea -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="product_description">DESCRIPCIÓN DE PRODUCTO</label>
+    <div class="col-md-4">                     
+      <textarea class="form-control" id="product_description" name="product_description"></textarea>
+    </div>
+  </div>
+  
+   
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="percentage_discount">DESCUENTO</label>  
+    <div class="col-md-4">
+    <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text">
+      
+    </div>
+  </div>
 
-        <main id="fondomain">
-            <br>
-             <h1 id="titulo">  CREAR CUENTA </h1>
-             <div id=container>
-                <form id="form" action="" method="" >
-                 <br>
-                 <input class="formulario" type="text" placeholder="Nombre y apellido" name="usuario" id="nombre"> </input>
-                 <br>
-                 <input class="formulario" type="text" placeholder="Email" name="emails" id="email"> </input>
-                 <br>
-                 <input class="formulario" type="text" placeholder= "Telefono (opcional)" name="telefonos" id="telefono"> </input>
-                 <br>
-                 <input class="formulario" type="password" placeholder="Contraseña"  name="contraseñas" id="contraseña"> </input>
-                 <br>
-                 <input class="formulario" type="password" placeholder="Repetir contraseña" name="repetcontraseñas" id="repetcontraseña"> </input>
-                 <br>
-                 <br>
-                 <button class="botoncito"> Crear cuenta </button>
-                 <br>
-                 <br>
-                 <a href="login.html"><label id=parrafo2>¿Tiene una cuenta?</label> <button class="botoncito"> Iniciar sesión </button></a>
-            </form>
-        </div>
-                
-
-        <main id="fondomain">
-
-            
-             
-        </main>
-        <hr class="linea">
-    
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="footer_logo"></div>
-                        <nav class="footer_nav"> </nav>
-                        <div class="footer_social">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram"  aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="copyright">
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-        
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </footer> 
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
-    </body>
-</html>
+   <!-- File Button --> 
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="filebutton">imagen principal</label>
+    <div class="col-md-4">
+      <input id="filebutton" name="filebutton" class="input-file" type="file">
+    </div>
+  </div>
+  <!-- File Button --> 
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="filebutton">imagen secundaria</label>
+    <div class="col-md-4">
+      <input id="filebutton" name="filebutton" class="input-file" type="file">
+    </div>
+  </div>
+  
+  <!-- Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="singlebutton">Subir</label>
+    <div class="col-md-4">
+      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Subir</button>
+    </div>
+    </div>
+  
+  </fieldset>
+  </form>
+  <footer class="footer">
+    <%- include ('./partials/footer') %>
+</footer> 
+</body>
