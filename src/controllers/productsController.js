@@ -5,7 +5,7 @@ const productsControllers =
         },
 
         crear_producto: (req, res) => {
-                res.render('products/crear_producto');
+                res.render('crear_producto');
         },   
 
         listado_producto: (req, res) => {
