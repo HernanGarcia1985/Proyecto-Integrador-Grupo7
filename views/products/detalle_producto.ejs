@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>Producto - Pet Friendly Market</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link rel="stylesheet" type="text/css" href="css/producto.css">
-<link rel="stylesheet" type="text/css" href="css/product_responsive.css">
-</head>
+	<head>
+		<%- include('../partials/head') %>  
+	  </head>
 
 <body id="fondobody">
 
@@ -20,20 +11,8 @@
 	<!-- Header -->
 
 	<header id="header">
-		<nav id="container0">
-			<ul class="item2"> <a href= "index.html"><img id="logo" src="./img/logo.jpeg" width="150px"> </a></ul>
-			<ul class="item2"> Perro </ul>
-			<ul class="item2"> Gato </ul>
-			<ul class="item2">Promociones </ul>
-			<ul class="item2">Sucursales</ul>
-			<ul class="item2"> Envios </ul>
-			<ul class="item2"> Contacto </ul>
-			<ul class="item2"> <input class="buscador" type="text" placeholder="Buscar">  </input> </ul>
-			<ul class="item2"> <a href="login.html"> <button class="botoncito"> Mi cuenta </button> </ul> </a> 
-			<ul class="item2"> <a href="carrito.html"><button class="botoncito"> Mi carrito </button> </a></ul>
-		</nav>
-		<hr class="linea">
-	
+		<%- include('../partials/header') %>
+		
 	</header>
 
 	<!-- Menu -->
@@ -226,28 +205,8 @@
 <!-- Footer -->
 
 <footer class="footer">
-	<hr class="linea">
-	<div class="container">
-		<div class="row">
-			<div class="col text-center">
-				<div class="footer_logo"></div>
-				<nav class="footer_nav"> </nav>
-				<div class="footer_social">
-					<ul>
-						<li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-instagram"  aria-hidden="true"></i></a></li>
-						<li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="copyright">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-
-			  </div>
-			</div>
-		</div>
-	</div>
-</footer>
+	<%- include ('../partials/footer') %>
+</footer> 
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
