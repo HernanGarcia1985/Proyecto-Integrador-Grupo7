@@ -6,10 +6,10 @@ const path = require('path');
 
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
+//app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
-app.use('/', usersRouters); 
+app.use('/users', usersRouters); 
 
 
 app.get('/', (req,res) =>{	

@@ -1,120 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <%- include('./partials/head') %>   
+  <%- include('../partials/head') %>   
 </head>
    
 <body id="fondobody">
 
     <header id="header">
-      <%- include('./partials/header') %>
+      <%- include('../partials/header') %>
       
     </header>
  
 
-  <form class="form-horizontal">
-  <fieldset>
+    <div class="container products-wrapper">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="products-title">Formulario de creación de productos</h2>
+        </div>
+      </div>
+      <div class="col-12">
+        <form action="/products/create" method="POST">
+          <div class="row product-detail">
+            <div class="col-12 col-md-6">
+              <label for="name" class="form-label">Nombre del producto:</label>
+              <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+              
+              <!--<% if (locals && locals.errors) { %>
+                <% if (locals.errors[0].param=="name") { %>
+                  <h3> <%= locals.errors[0].msg %>  </h3> 
+                <% } %>
+              <% } %>-->
   
-  <!-- Form Name -->
-  <legend>CREAR PRODUCTO</legend>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="price" class="form-label">Precio del producto:</label>
+              <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="discount" class="form-label">Descuento:</label>
+              <input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="category" class="form-label">Categoría:</label>
+              <select name="category" id="category" class="form-input">
+                <option value="">Elegí</option>
+                <option value="in-sale">En oferta</option>
+                <option value="visited">Últimos agregados</option>
+              </select>
+            </div>
+            <div class="col-12 col-md-6">
+              <label for="imageProduct" class="form-label">Seleccionar Imagen:</label>
+              <input type="file" name="imageProduct"/>
+            </div>
+            <div class="col-12">
+              <label for="description" class="form-label">Descipción:</label>
+              <textarea name="description" id="description" class="form-input"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="buy-now-button">Guardar producto</button>
+            </div>
+          </div>
+        </form>
+      </div>
   
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_id">ID PRODUCTO</label>  
-    <div class="col-md-4">
-    <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
-      
     </div>
-  </div>
-  
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_name">NOMBRE DE PRODUCTO</label>  
-    <div class="col-md-4">
-    <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
-      
-    </div>
-  </div>
-  
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_name_fr">DESCRIPCIÓN CORTA DE PRODUCTO</label>  
-    <div class="col-md-4">
-    <input id="product_name_fr" name="product_name_fr" placeholder="PRODUCT DESCRIPTION FR" class="form-control input-md" required="" type="text">
-      
-    </div>
-  </div>
-  
-  <!-- Select Basic -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_categorie">CATEGORÍA DE PRODUCTO</label>
-    <div class="col-md-4">
-      <select id="product_categorie" name="product_categorie" class="form-control">
-      </select>
-    </div>
-  </div>
-  
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="available_quantity">CANTIDADES</label>  
-    <div class="col-md-4">
-    <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
-      
-    </div>
-  </div>
-  
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_weight">PESO</label>  
-    <div class="col-md-4">
-    <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
-      
-    </div>
-  </div>
-  
-  <!-- Textarea -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="product_description">DESCRIPCIÓN DE PRODUCTO</label>
-    <div class="col-md-4">                     
-      <textarea class="form-control" id="product_description" name="product_description"></textarea>
-    </div>
-  </div>
-  
-   
-  <!-- Text input-->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="percentage_discount">DESCUENTO</label>  
-    <div class="col-md-4">
-    <input id="percentage_discount" name="percentage_discount" placeholder="PERCENTAGE DISCOUNT" class="form-control input-md" required="" type="text">
-      
-    </div>
-  </div>
-
-   <!-- File Button --> 
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="filebutton">imagen principal</label>
-    <div class="col-md-4">
-      <input id="filebutton" name="filebutton" class="input-file" type="file">
-    </div>
-  </div>
-  <!-- File Button --> 
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="filebutton">imagen secundaria</label>
-    <div class="col-md-4">
-      <input id="filebutton" name="filebutton" class="input-file" type="file">
-    </div>
-  </div>
-  
-  <!-- Button -->
-  <div class="form-group">
-    <label class="col-md-4 control-label" for="singlebutton">Subir</label>
-    <div class="col-md-4">
-      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Subir</button>
-    </div>
-    </div>
-  
-  </fieldset>
-  </form>
   <footer class="footer">
     <%- include ('./partials/footer') %>
 </footer> 
