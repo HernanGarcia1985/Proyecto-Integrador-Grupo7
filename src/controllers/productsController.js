@@ -12,8 +12,23 @@ const productsControllers =
                 res.render('products/listado_producto');
         },
         editar_producto: (req, res) => {
-                res.render('products/editar_producto');
+                res.render('editar_producto');
         }
 }
 
 module.exports = productsControllers;
+
+/* Update - Form to edit
+edit: (req, res) => {
+
+        let id = req.params.id;
+        let productoEncontrado;
+
+        for (let s of products){
+                if (id==s.id){
+                        productoEncontrado=s;
+                }
+        }
+
+        res.render('product-edit-form',{ProductoaEditar: productoEncontrado});
+},*/
