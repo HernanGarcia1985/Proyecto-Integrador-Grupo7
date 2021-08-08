@@ -20,7 +20,7 @@ const uploadFile = multer({ storage: configuracionImagen });
 
 
 
-router.get('/detalle:id',productsController.detalle_producto);  //products/:id cambio por comentario de jero al final de la clase
+router.get('/detail/:id',productsController.detalle_producto);  //products/:id cambio por comentario de jero al final de la clase
 
 router.get('/create',productsController.crear_producto); //products/create
 

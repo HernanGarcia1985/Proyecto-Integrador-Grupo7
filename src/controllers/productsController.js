@@ -1,3 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/productos-pet.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const productsControllers = 
 {
     	detalle_producto: (req, res) => {	
@@ -9,7 +15,8 @@ const productsControllers =
         },   
 
         listado_producto: (req, res) => {
-                res.render('products/listado_producto');
+                const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //leo los productos de la bd
+                res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
         },
         editar_producto: (req, res) => {
                 res.render('editar_producto');
