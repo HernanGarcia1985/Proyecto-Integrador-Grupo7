@@ -10,41 +10,43 @@
       <%- include('../partials/header') %>
       
     </header>
- 
-
     <div class="container products-wrapper">
       <div class="row">
         <div class="col-12">
-          <h2 class="products-title">Formulario de creación de productos</h2>
+          
         </div>
       </div>
       <div class="col-12">
         <form action="/products/create" method="POST">
           <div class="row product-detail">
+            <h2 class="products-title">Carga de producto nuevo</h2>
             <div class="col-12 col-md-6">
               <label for="name" class="form-label">Nombre del producto:</label>
-              <input type="text" id="name" name="name" placeholder="Ej: Zapatillas Reebok" class="form-input">
+              <input type="text" id="name" name="name" placeholder="Alimento Seco Cat chow" class="form-input">
               
-              <!--<% if (locals && locals.errors) { %>
+              <% if (locals && locals.errors) { %>
                 <% if (locals.errors[0].param=="name") { %>
                   <h3> <%= locals.errors[0].msg %>  </h3> 
                 <% } %>
-              <% } %>-->
+              <% } %>
   
             </div>
             <div class="col-12 col-md-6">
               <label for="price" class="form-label">Precio del producto:</label>
-              <input type="text" id="price" name="price" placeholder="Ej: 5678" class="form-input">
+              <input type="text" id="price" name="price" placeholder="$130,00" class="form-input">
             </div>
             <div class="col-12 col-md-6">
               <label for="discount" class="form-label">Descuento:</label>
-              <input type="text" id="discount" name="discount" placeholder="Ej: 15" class="form-input">
+              <input type="text" id="discount" name="discount" placeholder="10%" class="form-input">
             </div>
             <div class="col-12 col-md-6">
               <label for="category" class="form-label">Categoría:</label>
               <select name="category" id="category" class="form-input">
-                <option value="">Elegí</option>
-                <option value="in-sale">En oferta</option>
+                <option value="">Seleccionar</option>
+                <option value="alimseco">Alimentos secos</option>
+                <option value="alimhumedos">Alimentos húmedos</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="Juguetes">Juguetes</option>
                 <option value="visited">Últimos agregados</option>
               </select>
             </div>
@@ -53,11 +55,11 @@
               <input type="file" name="imageProduct"/>
             </div>
             <div class="col-12">
-              <label for="description" class="form-label">Descipción:</label>
+              <label for="description" class="form-label">Descripción:</label>
               <textarea name="description" id="description" class="form-input"></textarea>
             </div>
             <div class="col-12">
-              <button type="submit" class="buy-now-button">Guardar producto</button>
+              <button type="submit" class="botoncito">Guardar producto</button>
             </div>
           </div>
         </form>

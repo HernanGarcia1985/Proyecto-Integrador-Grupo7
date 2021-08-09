@@ -1,0 +1,47 @@
+[
+ {
+  "id": 1,
+  "name": "Pouch Fancy Feast Goulash Atún",
+  "price": "137",
+  "discount": "15",
+  "category": "in-sale",
+  "description": "El Pouch Fancy Feast Goulash Atún, está hecho de sabrosos trocitos de atun con una deliciosa salsa ligera, que le aportan a tu gato los nutrientes que necesita para mantenerse sano y fuerte. Además, su textura y sabor son ideales para aquellos que tienen el paladar exigente. ",
+  "image": "Pouch-fancy-feast.png"
+ },
+ {
+  "id": 2,
+  "name": "Comedero - Bebedero Para Gato",
+  "price": 1637,
+  "discount": 10,
+  "category": "in-sale",
+  "description": "Comedero para gatos. De 18 cm x 30 cm. Platos de acero inoxidable",
+  "image": "comedor_1.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Cama Huella Paris Gris",
+  "price": 7200,
+  "discount": 0,
+  "category": "in-sale",
+  "description": "La Cama Huella París, es una gran alternativa para darle a tu perro un descanso de calidad. Ofrece un diseño chic y moderno para combinar con las decoraciones de tu hogar, pero sobre todo está confeccionada de forma que sea cómoda, suave y mullida para asegurar el confort de tu mascota.",
+  "image": "cucha.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Juguete Catit 3 en 1 con Rascador",
+  "description": "El Juguete Catit 3 en 1 con Rascador, es ideal para los gatos que aman rascar, ya que en el centro del juguete se encuentra una almohadilla de cartón corrugado para satisfacer todas las necesidades de rascar de tu gato. El rascado es una gran manera para que tu gato descargue estrés, a la vez que desgasta sus uñas en una superficie diseñada para eso. La diversión no termina ahí, porque el juego también incluye un circuito con pelota y una abeja saltarina que activan los instintos cazadores de tu gato, contribuyendo a su entretenimiento y desarrollo mental.",
+  "price": 2900,
+  "discount": 20,
+  "image": "rascador.jpg",
+  "category": "in-sale"
+ },
+ {
+  "id": 6,
+  "name": "Kit Acuario Tetra Deluxe",
+  "description": "El Kit de acuario Tetra esta totalmente equipado con elementos de primera calidad, listo para su armado y un perfecto funcionamiento. Destinado a aquellos que desean comenzar un hobby con lo mejor y sin errores. Los Kits incluyen sistema de filtrado, acondicionador, alimento, material de lectura indispensable y de fácil comprensión, decoración y accesorios para su puesta en marcha. Dimensiones: 50 x 35 x 25cm",
+  "price": 9560,
+  "discount": 30,
+  "image": "kit-acuario.jpg",
+  "category": "in-sale"
+ }
+]

@@ -16,29 +16,6 @@
 	<main id="fondomain">
 		<div class="super_container">
 
-		<!-- Menu -->
-
-		<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
-			<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-			<div class="logo menu_mm"></div>
-			<div class="search">
-				<form action="#">
-					<input type="search" class="search_input menu_mm" required="required">
-					<button type="submit" id="search_button_menu" class="search_button menu_mm"><img class="menu_mm" src="img/magnifying-glass.svg" alt=""></button>
-				</form>
-			</div>
-			<nav class="menu_nav">
-				<ul class="menu_mm">
-					<li class="menu_mm"><a href="#">Perro</a></li>
-					<li class="menu_mm"><a href="#">Gato</a></li>
-					<li class="menu_mm"><a href="#">Promociones</a></li>
-					<li class="menu_mm"><a href="#">Sucursales</a></li>
-					<li class="menu_mm"><a href="#">Envíos</a></li>
-					<li class="menu_mm"><a href="#">Contacto</a></li>
-				</ul>
-			</nav>
-		</div>
-
 		<!-- Product -->
 
 		<div class="product">
@@ -62,9 +39,9 @@
 						<div class="product_image">
 							<div class="product_image_large"><img src="/img/comedor_1.jpg" alt=""></div>
 							<div class="product_image_thumbnails d-flex flex-row align-items-start justify-content-start">
-								<div class="product_image_thumbnail" style="background-image:url(img/comedor_1.jpg)" data-image="img/comedor_1.jpg"></div>
-								<div class="product_image_thumbnail" style="background-image:url(img/comedor_2.jpg)" data-image="img/comedor_2.jpg"></div>
-								<div class="product_image_thumbnail" style="background-image:url(img/comedor_3.jpg)" data-image="img/comedor_3.jpg"></div>
+								<div class="product_image_thumbnail" style="background-image:url(/img/comedor_1.jpg)" data-image="img/comedor_1.jpg"></div>
+								<div class="product_image_thumbnail" style="background-image:url(/img/comedor_2.jpg)" data-image="img/comedor_2.jpg"></div>
+								<div class="product_image_thumbnail" style="background-image:url(/img/comedor_3.jpg)" data-image="img/comedor_3.jpg"></div>
 							</div>
 						</div>
 					</div>
@@ -72,8 +49,8 @@
 					<!-- Product Content -->
 					<div class="col-lg-5">
 						<div class="product_content">
-							<div class="nombre-producto">Comedero - Bebedero Para Gato</div>
-							<div class="precio-producto">$1.693&nbsp;</div>
+							<div class="nombre-producto"><%=productoDetalle.name%></div>
+							<div class="precio-producto">>$<%=productoDetalle.price%>&nbsp;</div>
 							<div class="rating rating_4" data-rating="4">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
@@ -81,13 +58,9 @@
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
 							</div>
-							<!-- In Stock -->
-							<div class="in_stock_container">
-								<div class="in_stock in_stock_true"></div>
-								<span>in stock</span>
-							</div>
+							
 							<div class="product_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo. Etiam sed placerat felis. Proin non rutrum ligula.</p>
+								<p><%=productoDetalle.description%></p>
 							</div>
 							<!-- Product Quantity -->
 							<div class="product_quantity_container">
@@ -141,7 +114,7 @@
 								<ul>
 									<!-- Review -->
 									<li class=" review clearfix">
-										<div class="review_image"><img src="img/review_1.jpg" alt=""></div>
+										<div class="review_image"><img src="/img/review_1.jpg" alt=""></div>
 										<div class="review_content">
 											<div class="review_name"><a href="#">Maria López</a></div>
 											<div class="review_date">Dic 13, 2019</div>
@@ -159,7 +132,7 @@
 									</li>
 									<!-- Review -->
 									<li class=" review clearfix">
-										<div class="review_image"><img src="img/review_2.jpg" alt=""></div>
+										<div class="review_image"><img src="/img/review_2.jpg" alt=""></div>
 										<div class="review_content">
 											<div class="review_name"><a href="#">Angela Ibarra</a></div>
 											<div class="review_date">Nov 29, 2018</div>
