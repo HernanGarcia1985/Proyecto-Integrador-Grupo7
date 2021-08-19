@@ -18,9 +18,19 @@ const productsControllers =
                 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //leo los productos de la bd
                 res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
         },
-        editar_producto: (req, res) => {
-                res.render('editar_producto');
-        }
+        editar_producto:(req, res) => {
+
+		let id = req.params.id;
+		let productoEncontrado;
+
+		for (let s of products){
+			if (id==s.id){
+				productoEncontrado=s;
+			}
+		}
+
+		res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
+	},
 }
 
 module.exports = productsControllers;
