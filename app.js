@@ -21,7 +21,7 @@ app.get('/carrito', (req,res) =>{
 });
 
 app.use(express.static(path.resolve(__dirname, './public')));
-
+app.use(express.urlencoded({ extended: false }));
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Corriendo servidor en el puerto 3000");
