@@ -11,8 +11,52 @@ const productsControllers =
         },
 
         crear_producto: (req, res) => {
-                res.render('./products/crear_producto');
+                res.render('products/crear_producto');
         },   
+   	// Create -  Method to store
+	store: (req, res) => {
+
+		let errors = validationResult(req);
+
+		if ( errors.isEmpty() ) {
+
+			idNuevo=0;
+
+		for (let s of products){
+			if (idNuevo<s.id){
+				idNuevo=s.id;
+			}
+		}
+
+		idNuevo++;
+
+		let nombreImagen = req.file.filename;
+
+
+		let productoNuevo =  {
+			id:   idNuevo,
+			name: req.body.name ,
+			price: req.body.price,
+			discount: req.body.discount,
+			category: req.body.category,
+			description: req.body.description,
+			image: nombreImagen
+		};
+
+		products.push(productoNuevo);
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+
+		res.redirect('/');
+
+		
+		}
+		else{
+			res.render('crear_producto', {errors: errors.array() } ); 
+		}
+	
+		
+	},
 
         listado_producto: (req, res) => {
                 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //leo los productos de la bd

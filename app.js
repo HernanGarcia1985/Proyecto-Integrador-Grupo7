@@ -8,7 +8,8 @@ const path = require('path');
 app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
-app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
+
+app.use('/products', productsRouters);  // se concatenan las rutas del primer parametro y segundo parámetro 
 app.use('/users', usersRouters); 
 
 
@@ -22,7 +23,9 @@ app.get('/carrito', (req,res) =>{
 
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 app.listen(process.env.PORT || 3000, function() {
   console.log("Corriendo servidor en el puerto 3000");
 });
+

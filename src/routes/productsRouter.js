@@ -24,7 +24,7 @@ router.get('/detail/:id',productsController.detalle_producto);  //products/:id c
 
 router.get('/create',productsController.crear_producto); //products/create
 
-//router.post('/create',productsController.crear_producto2); //products/create ?????consultar
+router.post('/create',/* validaciones ,*/productsController.store); 
 
 router.get('/edit/:id',productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
 
