@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+//const {validationResult} = require('express-validator');
 
 const productsFilePath = path.join(__dirname, '../data/productos-pet.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -16,21 +17,21 @@ const productsControllers =
    	// Create -  Method to store
 	store: (req, res) => {
 
-		let errors = validationResult(req);
+		//let errors = validationResult(req);
 
-		if ( errors.isEmpty() ) {
+		//if ( errors.isEmpty() ) {
 
 			idNuevo=0;
 
 		for (let s of products){
 			if (idNuevo<s.id){
 				idNuevo=s.id;
-			}
+			}                                 
 		}
 
 		idNuevo++;
 
-		let nombreImagen = req.file.filename;
+		//let nombreImagen = req.file.filename;
 
 
 		let productoNuevo =  {
@@ -40,7 +41,7 @@ const productsControllers =
 			discount: req.body.discount,
 			category: req.body.category,
 			description: req.body.description,
-			image: nombreImagen
+			//image: nombreImagen
 		};
 
 		products.push(productoNuevo);
@@ -50,10 +51,10 @@ const productsControllers =
 		res.redirect('/');
 
 		
-		}
-		else{
-			res.render('crear_producto', {errors: errors.array() } ); 
-		}
+		//}
+		//else{
+		//	res.render('crear_producto', {errors: errors.array() } ); 
+		//}
 	
 		
 	},
