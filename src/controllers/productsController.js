@@ -76,21 +76,29 @@ const productsControllers =
 
 		res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
 	},
+
+	// Update - Method to update
+	update: (req, res) => {
+		
+		let id = req.params.id;
+		let productoEncontrado;
+
+		for (let s of products){
+			if (id==s.id){
+				s.name= req.body.name;
+				s.price= req.body.price;
+				s.discount= req.body.discount;
+				s.category= req.body.category;
+				s.description= req.body.description;
+				break;
+			}
+		}
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+
+		res.redirect('/');
+	},
 }
 
 module.exports = productsControllers;
 
-/* Update - Form to edit
-edit: (req, res) => {
-
-        let id = req.params.id;
-        let productoEncontrado;
-
-        for (let s of products){
-                if (id==s.id){
-                        productoEncontrado=s;
-                }
-        }
-
-        res.render('product-edit-form',{ProductoaEditar: productoEncontrado});
-},*/
