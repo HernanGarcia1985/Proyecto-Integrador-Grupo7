@@ -28,7 +28,7 @@ router.post('/create',/* validaciones ,*/productsController.store);
 
 router.get('/edit/:id',productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
 
-//router.put('/edit/:id',productsController.editar_producto2); //products/:id cambio por comentario de jero al final de la clase
+router.put('/edit/:id',productsController.edit); //products/:id cambio por comentario de jero al final de la clase
 
 //router.delete('/edit/:id',productsController.editar_producto3); //products/:id cambio por comentario de jero al final de la clase
 
