@@ -3,6 +3,7 @@ const usersRouters = require ('./src/routes/usersRouter');
 const express = require('express');
 const app = express();
 const path = require('path');
+const methodOverride = require('method-override');
 
 
 app.set('view engine', 'ejs');
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride('_method'));
 app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
 app.use('/users', usersRouters); 
 
