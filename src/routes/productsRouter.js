@@ -30,7 +30,7 @@ router.get('/edit/:id',productsController.editar_producto); //products/:id/edit 
 
 router.put('/edit/:id',productsController.update); //products/:id cambio por comentario de jero al final de la clase
 
-//router.delete('/edit/:id',productsController.editar_producto3); //products/:id cambio por comentario de jero al final de la clase
+router.delete('/edit/:id',productsController.destroy); //products/:id cambio por comentario de jero al final de la clase
 
 router.get('/',productsController.listado_producto); //products 
 
