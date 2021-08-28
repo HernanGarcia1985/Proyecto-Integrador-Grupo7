@@ -7,8 +7,19 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsControllers = 
 {
-    	detalle_producto: (req, res) => {	
-                res.render('products/detalle_producto',);
+    	detalle_producto: (req, res) => {
+
+			let idURL = req.params.id;
+			let productoEncontrado;
+
+			for (let p of products){
+				if (p.id==idURL){
+					productoEncontrado=p;
+					break;
+				}
+			}
+
+		    res.render('products/detalle_producto',{productoDetalle: productoEncontrado});
         },
 
         crear_producto: (req, res) => {
@@ -98,6 +109,29 @@ const productsControllers =
 
 		res.redirect('/');
 	},
+
+	// Delete - Delete one product from DB
+	destroy : (req, res) => {
+
+		let id = req.params.id;
+		let productoEncontrado;
+
+		let Nproducts = products.filter(function(e){
+			return id!=e.id;
+		})
+
+		for (let producto of products){
+			if (producto.id == id){
+			    productoEncontrado=producto;
+			}
+		}
+
+		//fs.unlinkSync(path.join(__dirname, '../../public/images/products/', ProductoEncontrado.image));
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(Nproducts,null,' '));
+
+		res.redirect('/');
+	}
 }
 
 module.exports = productsControllers;
