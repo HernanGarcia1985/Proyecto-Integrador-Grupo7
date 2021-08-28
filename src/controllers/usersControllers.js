@@ -27,7 +27,7 @@ const usersControllers = {
         },
 
         procesoLogin: (req, res) => {
-		//let usuarioLogin = User.buscarPorEmail(req.body.email);
+			let usuarioLogin = User.buscarPorEmail(req.body.email);
 			res.redirect('/users/perfil');
 		}
 /*		
