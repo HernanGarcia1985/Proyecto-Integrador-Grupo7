@@ -1,4 +1,4 @@
-//const bcryptjs = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 //const {validationResult} = require('express-validator');
 
 const User = require('../models/usersModel');
@@ -29,7 +29,7 @@ const usersControllers = {
         procesoLogin: (req, res) => {
 			let usuarioLogin = User.buscarPorEmail(req.body.email);
 			res.redirect('/users/perfil');
-		}
+		},
 /*		
 		if(usuarioLogin) {
 			let validarPassword = bcryptjs.compareSync(req.body.password, usuarioLogin.password);
@@ -59,17 +59,17 @@ const usersControllers = {
 				}
 			}
 		});
-	},
-/*
+	},*/
+
         procesoCrearCuenta: (req, res) => {
-		const resultValidation = validationResult(req);
+		/*const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
 			return res.render('crear_cuenta', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			});
-		}
+		}*/
 
 		let usuarioEnBD = User.buscarPorEmail(req.body.email);
 
@@ -87,24 +87,26 @@ const usersControllers = {
 		let usuarioPorCrear = {
 			...req.body,
 			password: bcryptjs.hashSync(req.body.password, 10),
-			image: req.file.filename
+			image: ""//req.file.filename
 		}
 
 		let usuarioCreado = User.crear(usuarioPorCrear);
 
 		return res.redirect('/users/login');
 
-	profile: (req, res) => {
-		return res.render('userProfile', {
-			user: req.session.usuarioLogueado
-		});
-	},
+		}
 
-	logout: (req, res) => {
-		res.clearCookie('userEmail');
-		req.session.destroy();
-		return res.redirect('/');
-	}*/
+		/*profile: (req, res) => {
+			return res.render('userProfile', {
+				user: req.session.usuarioLogueado
+			});
+		},
+
+		logout: (req, res) => {
+			res.clearCookie('userEmail');
+			req.session.destroy();
+			return res.redirect('/');
+		}*/
 }
 
 
