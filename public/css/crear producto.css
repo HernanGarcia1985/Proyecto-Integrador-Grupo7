@@ -24,12 +24,12 @@ html,
 body {
   min-height: 100vh;
   margin: 0;
-  font-size: 10px;
+  font-size: 14px; /*Igual al estilo q teniamos - 10px*/
 }
 
 body {
   font-family: var(--base-font-family);
-  font-weight: 300;
+  font-weight: 400; /*Igual al estilo q teniamos - 300*/
   background-color: var(--light-gray);
 }
 

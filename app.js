@@ -20,10 +20,6 @@ app.use('/', mainRouter);
 
 
 
-app.get('/carrito', (req,res) =>{
-  res.render('carrito');
-});
-
 app.listen(process.env.PORT || 3000, function() {
   console.log("Corriendo servidor en el puerto 3000");
 });
