@@ -1,5 +1,6 @@
 const productsRouters = require('./src/routes/productsRouter');
 const usersRouters = require ('./src/routes/usersRouter');
+const mainRouter = require('./src/routes/mainRouter'); // Rutas main
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -15,11 +16,9 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
 app.use('/users', usersRouters); 
+app.use('/', mainRouter);
 
 
-app.get('/', (req,res) =>{	
-    res.render('index');
-});
 
 app.get('/carrito', (req,res) =>{
   res.render('carrito');

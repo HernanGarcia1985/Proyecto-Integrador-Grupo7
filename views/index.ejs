@@ -64,53 +64,20 @@
 
       <div class="card-container" >
         
+        <% for(let producto of novedades) { %>
           <div class="card">
-            <img src="../img/set-perro.jpg" class="card-img-top" alt="...">
+            <img src="<%=producto.image %>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Nombre del Producto</h5>
-              <p class="card-text">Precio</p>
+              <h5 class="card-title"><%=producto.name %></h5>
+              <p class="card-text"><%=producto.price %></p>
             </div>
-            <a href="/products/detail/id"><div class="boton-comprar">
-              <button class="btn-primary" type="button">Comprar</button>
-            </div></a>
-          </div>
-        
-
-          <div class="card">
-            <img src="../img/comedor_1.jpg"  width= "100" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Comedero - Bebedero Para Gato</h5>
-              <p class="card-text">$1.693</p>
-            </div>
-            <a href="/products/detail/id"><div class="boton-comprar">
-              <button class="btn-primary" type="button"> Comprar</button>
-            </div></a>
-
-          </div>
-     
-
-          <div class="card">
-            <img src="../img/set-perro.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Nombre del Producto</h5>
-              <p class="card-text">Precio</p>
-            </div>
-            <a href="/products/detail/id"><div class="boton-comprar">
+            <a href="/products/detail/<%=producto.id %>"><div class="boton-comprar">
               <button class="btn-primary" type="button">Comprar</button>
             </div></a>
           </div>
 
-          
-            <div class="card">
-              <img src="../img/casita.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Nombre del Producto</h5>
-                <p class="card-text">Precio</p>
-              </div>
-              <a href="/products/detail/id"><div class="boton-comprar">
-                <button class="btn-primary" type="button">Comprar</button>
-              </div></a>
-           </div>
+        <%}%>
+         
 
     </div>
 
