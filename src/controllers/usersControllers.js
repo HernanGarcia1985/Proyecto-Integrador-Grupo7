@@ -3,19 +3,10 @@ const bcryptjs = require('bcryptjs');
 
 const User = require('../models/usersModel');
 
-let usuario = {
-	id:1,
-	name:"Katerina",
-	lastname: "Baudins",
-	email:"kbaudins0@diigo.com",
-	password:"LQcpPlvddkA0",
-	image:"http://dummyimage.com/108x100.png/ff4444/ffffff"
-}; //Creado para q funcione la vista perfil, cuando se haga la logica del json borrar
-
 const usersControllers = {
 
     	perfil: (req, res) => {	
-                res.render('users/perfil', {usuario: usuario});
+                res.render('users/perfil', {usuario: req.session.usuarioLogueado});
         },
 
         login: (req, res) => {
@@ -28,38 +19,36 @@ const usersControllers = {
 
         procesoLogin: (req, res) => {
 			let usuarioLogin = User.buscarPorEmail(req.body.email);
-			res.redirect('/users/perfil');
-		},
-/*		
-		if(usuarioLogin) {
-			let validarPassword = bcryptjs.compareSync(req.body.password, usuarioLogin.password);
-			if (validarPassword) {
-				delete usuarioLogin.password;
-				req.session.usuarioLogueado = usuarioLogin;
+		
+			if(usuarioLogin) {
+				let validarPassword = bcryptjs.compareSync(req.body.password, usuarioLogin.password);
+				if (validarPassword == false) { //Cambiar a true cuando cuando esten hasheados los passwords
+					delete usuarioLogin.password;
+					req.session.usuarioLogueado = usuarioLogin;
 
-				if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-				} //Opcion de recordar usuario
+					//if(req.body.remember_user) {
+					//	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+					//} //Opcion de recordar usuario
 
-				return res.redirect('/users/perfil');
-			} 
+					return res.redirect('/users/perfil');
+				} 
+				return res.render('login', {
+					errors: {
+						email: {
+							msg: 'Las credenciales son inválidas'
+						}
+					}
+				});
+			}
+
 			return res.render('login', {
 				errors: {
 					email: {
-						msg: 'Las credenciales son inválidas'
+						msg: 'No se encuentra este email en nuestra base de datos'
 					}
 				}
 			});
-		}
-
-		return res.render('login', {
-			errors: {
-				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
-				}
-			}
-		});
-	},*/
+		},
 
         procesoCrearCuenta: (req, res) => {
 		/*const resultValidation = validationResult(req);
@@ -96,11 +85,7 @@ const usersControllers = {
 
 		}
 
-		/*profile: (req, res) => {
-			return res.render('userProfile', {
-				user: req.session.usuarioLogueado
-			});
-		},
+		/*
 
 		logout: (req, res) => {
 			res.clearCookie('userEmail');
