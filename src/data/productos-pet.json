@@ -443,8 +443,8 @@
  {
   "id": 51,
   "name": "producto1",
-  "price": "130",
-  "discount": "10%",
+  "price": 130,
+  "discount": 10,
   "category": "alimseco",
   "description": "jaja"
  }
