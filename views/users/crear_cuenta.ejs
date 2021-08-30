@@ -14,20 +14,22 @@
             <br>
                 <h1 id="titulo">  CREAR CUENTA </h1>
                 <div id=container>
-                <form id="form" action="" method="" >
+                <form id="form" action="/users/crear_cuenta" method="POST" >
                     <br>
-                    <input class="formulario" type="text" placeholder="Nombre y apellido" name="usuario" id="nombre"> </input>
+                    <input class="formulario" type="text" placeholder="Nombre" name="name" id="nombre"> </input>
                     <br>
-                    <input class="formulario" type="text" placeholder="Email" name="emails" id="email"> </input>
+                    <input class="formulario" type="text" placeholder="Apellido" name="last-name" id="nombre"> </input>
                     <br>
-                    <input class="formulario" type="text" placeholder= "Telefono (opcional)" name="telefonos" id="telefono"> </input>
+                    <input class="formulario" type="text" placeholder="Email" name="email" id="email"> </input>
                     <br>
-                    <input class="formulario" type="password" placeholder="Contraseña"  name="contraseñas" id="contraseña"> </input>
+                    <input class="formulario" type="text" placeholder= "Telefono (opcional)" name="telephone" id="telefono"> </input>
                     <br>
-                    <input class="formulario" type="password" placeholder="Repetir contraseña" name="repetcontraseñas" id="repetcontraseña"> </input>
+                    <input class="formulario" type="password" placeholder="Contraseña"  name="password" id="contraseña"> </input>
+                    <br>
+                    <input class="formulario" type="password" placeholder="Repetir contraseña" name="repeatpassword" id="repetcontraseña"> </input>
                     <br>
                     <br>
-                    <button class="botoncito"> Crear cuenta </button>
+                    <button type= "submit" class="botoncito"> Crear cuenta </button>
                     <br>
                     <br>
                     <a href="/users/login"><label id=parrafo2>¿Tiene una cuenta?</label> <button type="button" class="botoncito"> Iniciar sesión </button></a>
