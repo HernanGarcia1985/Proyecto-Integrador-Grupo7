@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsControllers = 
 {
-    	detalle_producto: (req, res) => {
+    detalle_producto: (req, res) => {
 
 			let idURL = req.params.id;
 			let productoEncontrado;
@@ -20,11 +20,12 @@ const productsControllers =
 			}
 
 		    res.render('products/detalle_producto',{productoDetalle: productoEncontrado});
-        },
+    },
 
-        crear_producto: (req, res) => {
+    crear_producto: (req, res) => {
                 res.render('products/crear_producto');
-        },   
+    },   
+
    	// Create -  Method to store
 	store: (req, res) => {
 
@@ -70,11 +71,12 @@ const productsControllers =
 		
 	},
 
-        listado_producto: (req, res) => {
+    listado_producto: (req, res) => {
                 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //leo los productos de la bd
                 res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
-        },
-        editar_producto:(req, res) => {
+	},
+
+    editar_producto:(req, res) => {
 
 		let id = req.params.id;
 		let productoEncontrado;
@@ -132,7 +134,7 @@ const productsControllers =
 
 		res.redirect('/');
 	}
-}
+};
 
 module.exports = productsControllers;
 

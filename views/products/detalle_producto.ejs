@@ -104,8 +104,8 @@
 								</div>
 								<div class="button cart_button"><a href="#">Comprar</a></div>
 								
-								<div class="button cart_button"><a href="">Editar</a></div>
-								
+								<div class="button cart_button"><a href="/products/edit/<%=productoDetalle.id%>">Editar</a></div>
+																
 								<div>
 									<form action="/products/edit/<%=productoDetalle.id%>?_method=DELETE" method="POST" style="display: inline-flex" onsubmit="return confirm('Esta seguro que desea eliminarlo?');"> 
 										<button type="submit" class="button cart_button">ELIMINAR</button>

@@ -4,7 +4,7 @@ const mainRouter = require('./src/routes/mainRouter'); // Rutas main
 const express = require('express');
 const app = express();
 const path = require('path');
-const methodOverride = require('method-override');
+const methodOverride = require('method-override'); 
 const session = require('express-session');
 const cookieParser = require ('cookie-parser');
 
@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({secret:'Es un secreto'}));
+
+
 app.use(cookieParser());
 app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
 app.use('/users', usersRouters); 

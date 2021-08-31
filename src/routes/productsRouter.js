@@ -23,14 +23,13 @@ const uploadFile = multer({ storage: configuracionImagen });
 router.get('/detail/:id',productsController.detalle_producto);  //products/:id cambio por comentario de jero al final de la clase
 
 router.get('/create',productsController.crear_producto); //products/create
-
 router.post('/create',/* validaciones ,*/productsController.store); 
 
-router.get('/edit/:id',productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
-
-router.put('/edit/:id',productsController.update); //products/:id cambio por comentario de jero al final de la clase
+router.get('/edit/:id', productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
+router.put('/edit/:id', productsController.update); //products/:id cambio por comentario de jero al final de la clase
 
 router.delete('/edit/:id',productsController.destroy); //products/:id cambio por comentario de jero al final de la clase
+//router.delete('/:id', productsController.destroy); ver la ruta, así está en el proyecto de Jero 
 
 router.get('/',productsController.listado_producto); //products 
 
