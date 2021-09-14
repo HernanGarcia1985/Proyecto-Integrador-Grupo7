@@ -22,7 +22,7 @@ const usersControllers = {
 		
 			if(usuarioLogin) {
 				let validarPassword = bcryptjs.compareSync(req.body.password, usuarioLogin.password);
-				if (validarPassword == false) { //Cambiar a true cuando cuando esten hasheados los passwords
+				if (validarPassword == true) { //Cambiar a true cuando cuando esten hasheados los passwords
 					delete usuarioLogin.password;
 					req.session.usuarioLogueado = usuarioLogin;
 
