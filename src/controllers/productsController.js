@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 //const {validationResult} = require('express-validator');
+const db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/productos-pet.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -9,15 +10,13 @@ const productsControllers =
 {
     detalle_producto: (req, res) => {
 
-			let idURL = req.params.id;
+			//let idURL = req.params.id;
 			let productoEncontrado;
 
-			for (let p of products){
-				if (p.id==idURL){
-					productoEncontrado=p;
-					break;
-				}
-			}
+			db.Producto.findByPk(req.params.id)
+				.then((producto) =>{
+					productoEncontrado = producto;
+				});
 
 		    res.render('products/detalle_producto',{productoDetalle: productoEncontrado});
     },
@@ -33,32 +32,22 @@ const productsControllers =
 
 		//if ( errors.isEmpty() ) {
 
-			idNuevo=0;
-
-		for (let s of products){
-			if (idNuevo<s.id){
-				idNuevo=s.id;
-			}                                 
-		}
-
-		idNuevo++;
-
 		//let nombreImagen = req.file.filename;
 
-
-		let productoNuevo =  {
-			id:   idNuevo,
+		db.Producto.create({
+			
 			name: req.body.name ,
 			price: req.body.price,
 			discount: req.body.discount,
-			category: req.body.category,
 			description: req.body.description,
-			//image: nombreImagen
-		};
+			//image: ruta de la Imagen
+			//qty: req.body.qty,
+			//createDate: req.body.createDate,
+			//id_animal: req.body.id_animal,
+			//id_categoria: req.body.id_categoria
+		});
 
-		products.push(productoNuevo);
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+		//Ver de redireccionar al detalle con el producto creado
 
 		res.redirect('/');
 
