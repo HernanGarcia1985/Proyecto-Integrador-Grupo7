@@ -74,9 +74,13 @@ const usersControllers = {
 		}
 
 		let usuarioPorCrear = {
-			...req.body,
+			name: req.body.name,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			telephone: req.body.telephone,
 			password: bcryptjs.hashSync(req.body.password, 10),
-			image: ""//req.file.filename
+			//image: //req.file.filename,
+			type: req.body.type
 		}
 
 		let usuarioCreado = User.crear(usuarioPorCrear);
