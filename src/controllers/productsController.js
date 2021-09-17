@@ -42,63 +42,59 @@ const productsControllers =
 			description: req.body.description,
 			//image: ruta de la Imagen
 			//qty: req.body.qty,
-			//createDate: req.body.createDate,
+			//createDate: req.body.createDate, //ver de usar funcion date.now()
 			//id_animal: req.body.id_animal,
 			//id_categoria: req.body.id_categoria
 		});
 
-		//Ver de redireccionar al detalle con el producto creado
+		res.redirect('/'); //Ver de redireccionar al detalle con el producto creado
 
-		res.redirect('/');
-
-		
 		//}
 		//else{
 		//	res.render('crear_producto', {errors: errors.array() } ); 
 		//}
-	
-		
 	},
 
     listado_producto: (req, res) => {
-                const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); //leo los productos de la bd
-                res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
+        
+		let products;
+		db.Producto.findAll() //leo los productos de la bd
+			.then((todosLosProdcutos) =>{
+				products = todosLosProdcutos;
+			});
+        res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
 	},
 
     editar_producto:(req, res) => {
-
-		let id = req.params.id;
+		
 		let productoEncontrado;
 
-		for (let s of products){
-			if (id==s.id){
-				productoEncontrado=s;
-			}
-		}
+		db.Producto.findByPk(req.params.id)
+				.then((producto) =>{
+					productoEncontrado = producto;
+				});
 
 		res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
 	},
 
 	// Update - Method to update
 	update: (req, res) => {
+
+		db.Producto.update(
+			{name: req.body.name,
+			price: req.body.price,
+			discount: req.body.discount,
+			description: req.body.description,
+			//image: ruta de la imagen,
+			//qty: req.body.qty,
+			//createDate: req.body.createDate, //NO VA
+			//id_animal: req.body.id_animal,
+			//id_categoria: req.body.id_categoria
+			},
+			{where: {id:req.params.id}}
+		);
 		
-		let id = req.params.id;
-		let productoEncontrado;
-
-		for (let s of products){
-			if (id==s.id){
-				s.name= req.body.name;
-				s.price= req.body.price;
-				s.discount= req.body.discount;
-				s.category= req.body.category;
-				s.description= req.body.description;
-				break;
-			}
-		}
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
-
-		res.redirect('/');
+		res.redirect('/'); //Ver de direccionar al detalle del producto actualizado
 	},
 
 	// Delete - Delete one product from DB
