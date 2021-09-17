@@ -12,13 +12,15 @@ const productsControllers =
 
 			//let idURL = req.params.id;
 			let productoEncontrado;
-
+			
 			db.Producto.findByPk(req.params.id)
 				.then((producto) =>{
 					productoEncontrado = producto;
-				});
-
-		    res.render('products/detalle_producto',{productoDetalle: productoEncontrado});
+					res.render('products/detalle_producto',{productoDetalle: productoEncontrado});
+				})
+				.catch(function(error){
+					console.log("error!");
+				})
     },
 
     crear_producto: (req, res) => {
@@ -61,8 +63,12 @@ const productsControllers =
 		db.Producto.findAll() //leo los productos de la bd
 			.then((todosLosProdcutos) =>{
 				products = todosLosProdcutos;
-			});
-        res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
+				res.render('products/listado_producto', {productos: products}); //paso los productos con obj literal
+			})
+			.catch(function(error){
+				console.log("error!");
+			})
+        
 	},
 
     editar_producto:(req, res) => {
