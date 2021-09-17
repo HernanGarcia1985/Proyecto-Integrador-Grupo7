@@ -78,9 +78,11 @@ const productsControllers =
 		db.Producto.findByPk(req.params.id)
 				.then((producto) =>{
 					productoEncontrado = producto;
-				});
-
-		res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
+					res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
+				})
+				.catch(function(error){
+					console.log("error!");
+				})
 	},
 
 	// Update - Method to update
