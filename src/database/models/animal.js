@@ -21,5 +21,13 @@ module.exports = (sequelize,DataTypes) => {
     }
 
     const Animal = sequelize.define (alias,cols,config);
+
+    Animal.associate = function(models){
+        Animal.hasMany(models.producto,{
+            as: "productos",
+            foreignKey: "id_animal"
+        });
+    }
+
     return Animal;
 }
