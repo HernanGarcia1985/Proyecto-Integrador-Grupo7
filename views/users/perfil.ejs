@@ -18,11 +18,19 @@
                 <br>
                 <input class="formulario" type="text" placeholder="Nombre" name="name" id="nombre" value= <%=usuario.name%>>  </input>
                 <br>
-                <input class="formulario" type="text" placeholder="Apellido" name="last-name" id="nombre" value=<%=usuario.lastname%>> </input>
+                <input class="formulario" type="text" placeholder="Apellido" name="last-name" id="nombre" value=<%=usuario.lastName%>> </input>
                 <br>
-                <input class="formulario" type="text" placeholder="Email" name="emails" id="email" value =<%=usuario.email%>> </input>
+                <input class="formulario" type="email" placeholder="Email" name="emails" id="email" value =<%=usuario.email%>> </input>
                 <br>
-                <input class="formulario" type="text" placeholder= "Telefono (opcional)" name="telefonos" id="telefono"> </input>
+                <input class="formulario" type="text" placeholder= "Telefono" name="telefonos" id="telefono" value =<%=usuario.telephone%>> </input>
+                <br>
+                <%if (usuario.type == 1){%>
+                    <%let tipo = "Administrador";}%>
+                <%else if (usuario.type == 2){%>
+                    <%let tipo = "Vendedor";}%>
+                <%else{%>
+                    <%let tipo = "Comprador";}%>
+                <input class="formulario" type="text" placeholder= "Tipo de usuario" name="tipo" id="tipo" value =<%=tipo%>> </input>
                 <br>
                 <img src=<%=usuario.image%>></img>
                 <br>
