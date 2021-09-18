@@ -64,15 +64,15 @@ module.exports = (sequelize,DataTypes) => {
     const Producto = sequelize.define (alias,cols,config);
 
     Producto.associate = function(models){
-        Producto.belongsTo(models.animal,{
+        Producto.belongsTo(models.Animal,{
             as: "animales",
             foreignKey: "id_animal"
         });
-        Producto.belongsTo(models.categoria,{
+        Producto.belongsTo(models.Categoria,{
             as: "categorias",
             foreignKey: "id_categoria"
         });
-        Producto.belongsToMany(models.usuario,{
+        Producto.belongsToMany(models.Usuario,{
             as: "usuarios",
             through: "productoUsuario",
             foreignKey: "id_producto",
