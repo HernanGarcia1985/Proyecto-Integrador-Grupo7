@@ -4,10 +4,10 @@ module.exports =
 
 {
   "development": {
-    "username": "root",
-    "password": "",
-    "database": "petshop",
-    "host": "127.0.0.1",
+    "username": "fabiana_anher",
+    "password": "AndreHer1",
+    "database": "fabiana_petshop",
+    "host": "mysql-fabiana.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {
