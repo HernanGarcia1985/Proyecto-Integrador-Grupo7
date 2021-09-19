@@ -458,5 +458,16 @@
   "password": "$2a$10$AOQr0oL1.b3roLig5EiwV.DIGGGembmAsw5DRHtfg8QcMEnjPr29C",
   "repeatpassword": "prueba1234",
   "image": ""
+ },
+ {
+  "id": 52,
+  "name": "cosme",
+  "last-name": "fulanito",
+  "email": "cosmefulanito@dh.com",
+  "telephone": "745835032",
+  "password": "$2a$10$kG6PgIzCaJ5LhmH5duvq9uWtjDuw.eZ3Azkgv3ot7IDiDvUQRnpUG",
+  "repeatpassword": "soycosme",
+  "image": "",
+  "type": 3
  }
 ]
