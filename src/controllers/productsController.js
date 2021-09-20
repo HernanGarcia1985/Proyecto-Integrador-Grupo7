@@ -24,8 +24,13 @@ const productsControllers =
     },
 
     crear_producto: (req, res) => {
-                res.render('products/crear_producto');
-    },   
+		let promesaCategoria = db.Categoria.findAll();
+		let promesaAnimal = db.Animal.findAll();
+		Promise.all([promesaCategoria,promesaAnimal])
+			.then(function([resultadoCategoria,resultadoAnimal]){
+				res.render('products/crear_producto',{categoria:resultadoCategoria,animal:resultadoAnimal});
+			})
+	},
 
    	// Create -  Method to store
 	store: (req, res) => {
@@ -94,10 +99,10 @@ const productsControllers =
 			discount: req.body.discount,
 			description: req.body.description,
 			//image: ruta de la imagen,
-			//qty: req.body.qty,
+			qty: req.body.qty,
 			//createDate: req.body.createDate, //NO VA
-			//id_animal: req.body.id_animal,
-			//id_categoria: req.body.id_categoria
+			id_animal: req.body.id_animal,
+			id_categoria: req.body.id_categoria
 			},
 			{where: {id:req.params.id}}
 		);
