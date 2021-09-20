@@ -48,10 +48,10 @@ const productsControllers =
 			discount: req.body.discount,
 			description: req.body.description,
 			//image: ruta de la Imagen
-			//qty: req.body.qty,
+			qty: req.body.qty,
 			//createDate: req.body.createDate, //ver de usar funcion date.now()
-			//id_animal: req.body.id_animal,
-			//id_categoria: req.body.id_categoria
+			id_animal: req.body.id_animal,
+			id_categoria: req.body.id_categoria
 		});
 
 		res.redirect('/'); //Ver de redireccionar al detalle con el producto creado
