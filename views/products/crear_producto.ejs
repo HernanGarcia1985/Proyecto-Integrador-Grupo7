@@ -42,25 +42,31 @@
             <div class="col-12 col-md-6">
               <label for="category" class="form-label">Categoría:</label>
               <select name="category" id="category" class="form-input">
-                <option value="">Seleccionar</option>
+                <% for (let i = 0; i < categoria.length;i++){ %>
+                  <option value="<%=categoria[i].id%>"><%=categoria[i].typeCategory%></option>
+                  <% } %>
+                <!--<option value="">Seleccionar</option>
                 <option value="alimseco">Alimentos secos</option>
                 <option value="alimhumedos">Alimentos húmedos</option>
                 <option value="accesorios">Accesorios</option>
                 <option value="Juguetes">Juguetes</option>
-                <option value="visited">Últimos agregados</option>
+                <option value="visited">Últimos agregados</option>-->
               </select>
             </div>
             <div class="col-12 col-md-6">
               <label for="animal" class="form-label">Tipo de animal:</label>
               <select name="animal" id="animal" class="form-input">
-                <option value="">Seleccionar</option>
+                <% for (let i = 0; i < animal.length;i++){ %>
+                  <option value="<%=animal[i].id%>"><%=animal[i].typeAnimal%></option>
+                  <% } %>
+                <!--<option value="">Seleccionar</option>
                 <option value="perro">Perro</option>
-                <option value="gato">Gato</option>
+                <option value="gato">Gato</option>-->
               </select>
             </div>
             <div class="col-12 col-md-6">
-              <label for="discount" class="form-label">Cantidades:</label>
-              <input type="number" id="discount" name="discount" placeholder="10" class="form-input">
+              <label for="qty" class="form-label">Cantidades:</label>
+              <input type="number" id="qty" name="qty" placeholder="10" class="form-input">
             </div>
             <div class="col-12 col-md-6">
               <label for="imageProduct" class="form-label">Seleccionar Imagen:</label>
