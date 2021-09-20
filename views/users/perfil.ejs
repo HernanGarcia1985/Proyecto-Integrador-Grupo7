@@ -24,13 +24,7 @@
                 <br>
                 <input class="formulario" type="text" placeholder= "Telefono" name="telefonos" id="telefono" value =<%=usuario.telephone%>> </input>
                 <br>
-                <%if (usuario.type == 1){%>
-                    <%let tipo = "Administrador";}%>
-                <%else if (usuario.type == 2){%>
-                    <%let tipo = "Vendedor";}%>
-                <%else{%>
-                    <%let tipo = "Comprador";}%>
-                <input class="formulario" type="text" placeholder= "Tipo de usuario" name="tipo" id="tipo" value =<%=tipo%>> </input>
+                <input class="formulario" type="text" placeholder= "Tipo de usuario" name="tipo" id="tipo"> </input>
                 <br>
                 <img src=<%=usuario.image%>></img>
                 <br>
