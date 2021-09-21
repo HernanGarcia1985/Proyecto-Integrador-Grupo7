@@ -34,13 +34,13 @@ module.exports = (sequelize,DataTypes) => {
             null: false
         },
         createDate: {
-            type: DataTypes.DATEONLY,
-            null: false
+            type: 'TIMESTAMP',
+            defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+            null: false,
         },
         removeDate: {
-            type: DataTypes.DATEONLY,
+            type: 'TIMESTAMP',
             null: true,
-            default: null
         },
         id_animal: {
             type: DataTypes.INTEGER,
@@ -58,7 +58,10 @@ module.exports = (sequelize,DataTypes) => {
 
     let config = {
         tableName: "producto",
-        timestamps: false
+        timestamps: true,
+        paranoid: true
+        createdAt: "createDate",
+        deletedAt: "removeDate"
     }
 
     const Producto = sequelize.define (alias,cols,config);

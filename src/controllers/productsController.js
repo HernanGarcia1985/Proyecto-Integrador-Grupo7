@@ -49,7 +49,7 @@ const productsControllers =
 			description: req.body.description,
 			//image: ruta de la Imagen
 			qty: req.body.qty,
-			//createDate: req.body.createDate, //ver de usar funcion date.now()
+			//createDate: new Date.getTime, //req.body.createDate, //ver de usar funcion date.now()
 			id_animal: req.body.id_animal,
 			id_categoria: req.body.id_categoria
 		});
@@ -112,23 +112,14 @@ const productsControllers =
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-
-		let id = req.params.id;
-		let productoEncontrado;
-
-		let Nproducts = products.filter(function(e){
-			return id!=e.id;
-		})
-
-		for (let producto of products){
-			if (producto.id == id){
-			    productoEncontrado=producto;
+		
+		await db.Producto.destroy({
+			where: {
+				id: req.params.id
 			}
-		}
-
+		})
+		
 		//fs.unlinkSync(path.join(__dirname, '../../public/images/products/', ProductoEncontrado.image));
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(Nproducts,null,' '));
 
 		res.redirect('/');
 	}
