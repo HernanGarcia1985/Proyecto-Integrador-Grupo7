@@ -1,3 +1,5 @@
+const Sequelize = require('sequelize');
+
 module.exports = (sequelize,DataTypes) => {
 
     let alias = "Producto";
@@ -38,6 +40,10 @@ module.exports = (sequelize,DataTypes) => {
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
             null: false,
         },
+        editDate: {
+            type: 'TIMESTAMP',
+            null: true,
+        },
         removeDate: {
             type: 'TIMESTAMP',
             null: true,
@@ -59,9 +65,10 @@ module.exports = (sequelize,DataTypes) => {
     let config = {
         tableName: "producto",
         timestamps: true,
-        paranoid: true
+        paranoid: true,
         createdAt: "createDate",
-        deletedAt: "removeDate"
+        deletedAt: "removeDate",
+        updatedAt: "editDate"
     }
 
     const Producto = sequelize.define (alias,cols,config);
