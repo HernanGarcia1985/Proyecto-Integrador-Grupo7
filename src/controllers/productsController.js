@@ -113,7 +113,7 @@ const productsControllers =
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		
-		await db.Producto.destroy({
+		db.Producto.destroy({
 			where: {
 				id: req.params.id
 			}
