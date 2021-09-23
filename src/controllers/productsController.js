@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 //const {validationResult} = require('express-validator');
 const db = require('../database/models');
+const Sequelize = require('sequelize');
 
 const productsFilePath = path.join(__dirname, '../data/productos-pet.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -100,7 +101,7 @@ const productsControllers =
 			description: req.body.description,
 			//image: ruta de la imagen,
 			qty: req.body.qty,
-			//createDate: req.body.createDate, //NO VA
+			editDate: Sequelize.literal('CURRENT_TIMESTAMP'),
 			id_animal: req.body.id_animal,
 			id_categoria: req.body.id_categoria
 			},
