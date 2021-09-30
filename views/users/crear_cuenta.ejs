@@ -15,7 +15,13 @@
                 <h1 id="titulo">  CREAR CUENTA </h1>
                 <div id=container>
 
-                    
+                    <% if (locals && locals.errors) { %>
+                        <% if (locals.errors[0].param=="email") { %>
+                          <h3> <%= locals.errors[0].msg %>  </h3> 
+                        <% } %>
+                      <% } %> 
+                      
+
                 <form id="form" action="/users/crear_cuenta" method="POST" >
                     <br>
                     <input class="formulario" type="text" placeholder="Nombre" name="name" id="nombre"> </input>
