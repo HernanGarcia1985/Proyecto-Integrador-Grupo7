@@ -1,5 +1,5 @@
 const bcryptjs = require('bcryptjs');
-//const {validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 
 const db = require('../database/models');
 const User = require('../models/usersModel');
@@ -61,14 +61,16 @@ const usersControllers = {
 		},
 
         procesoCrearCuenta: (req, res) => {
-		/*const resultValidation = validationResult(req);
+		const resultValidation = validationResult(req);
 
 		if (resultValidation.errors.length > 0) {
-			return res.render('crear_cuenta', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
+			console.log (resultValidation.errors);
+			return res.render('users/crear_cuenta', {
+				errors: resultValidation.array(),
+				//oldData: req.body
 			});
-		}*/
+			
+		}
 		console.log(req.body.email);
 		db.Usuario.findOne({
 			where: {
