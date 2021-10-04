@@ -1,8 +1,10 @@
 const usersControllers = require('../controllers/usersControllers');
 const {body}= require ('express-validator');
 const validateCreate= [
-    body ('name', 'lastName').notEmpty().withMessage("Campo obligatorio"),
+    body ('name').notEmpty().withMessage("Campo obligatorio"),
+    body ('lastName').notEmpty().withMessage("Campo obligatorio"),
     body ('email').isEmail().withMessage("Ingresé un mail válido"),
+    body ('password').notEmpty().withMessage("Debe ingresar una contraseña"),
 ];
 const express = require('express');
 const router = express.Router();
