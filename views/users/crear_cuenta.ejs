@@ -15,24 +15,54 @@
                 <h1 id="titulo">  CREAR CUENTA </h1>
                 <div id=container>
 
-                    <% if (locals && locals.errors) { %>
-                        <% if (locals.errors[0].param=="email") { %>
-                          <h3> <%= locals.errors[0].msg %>  </h3> 
+                 <!--   <% if (locals && locals.errors) { %>
+                        <% errors.forEach(error => { %>
+                        <% if (error.param=="email") { %>
+                          <h3> <%= error.msg%>  </h3> 
                         <% } %>
-                      <% } %> 
-                      
+                      <% }) %> 
+                    <% } %> -->
+                    
 
                 <form id="form" action="/users/crear_cuenta" method="POST" >
                     <br>
                     <input class="formulario" type="text" placeholder="Nombre" name="name" id="nombre"> </input>
+                    <% if (locals && locals.errors) { %>
+                        <% errors.forEach(error => { %>
+                        <% if (error.param=="name") { %>
+                          <h3> <%= error.msg%>  </h3> 
+                        <% } %>
+                      <% }) %> 
+                    <% } %> 
                     <br>
                     <input class="formulario" type="text" placeholder="Apellido" name="lastName" id="nombre"> </input>
+                    <% if (locals && locals.errors) { %>
+                        <% errors.forEach(error => { %>
+                        <% if (error.param=="lastName") { %>
+                          <h5> <%= error.msg%>  </h5> 
+                        <% } %>
+                      <% }) %> 
+                    <% } %> 
                     <br>
                     <input class="formulario" type="text" placeholder="Email" name="email" id="email"> </input>
+                    <% if (locals && locals.errors) { %>
+                        <% errors.forEach(error => { %>
+                        <% if (error.param=="email") { %>
+                          <h6> <%= error.msg%>  </h6> 
+                        <% } %>
+                      <% }) %> 
+                    <% } %> 
                     <br>
                     <input class="formulario" type="text" placeholder= "Telefono (opcional)" name="telephone" id="telefono"> </input>
                     <br>
                     <input class="formulario" type="password" placeholder="Contraseña"  name="password" id="contraseña"> </input>
+                    <% if (locals && locals.errors) { %>
+                        <% errors.forEach(error => { %>
+                        <% if (error.param=="password") { %>
+                          <h4> <%= error.msg%>  </h4> 
+                        <% } %>
+                      <% }) %> 
+                    <% } %> 
                     <br>
                     <input class="formulario" type="file" placeholder="perfil" name="image" id="perfil"> </input>
                     <label for="imageAvatar" class="form-label">Seleccionar Imagen:</label>               
