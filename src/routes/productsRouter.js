@@ -3,6 +3,18 @@ const productsController = require('./../controllers/productsController');
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
+const {body}= require ('express-validator');
+const validateCreate= [
+    body ('name').notEmpty().withMessage("Campo obligatorio"),
+    body ('price').notEmpty().withMessage("Campo obligatorio"),
+    body ('discount').notEmpty().withMessage("Debe completar este campo y sino 0"),
+    body ('description').notEmpty().withMessage("Completar este campo"),
+    body ('qty').notEmpty().withMessage("Ingresé la cantidad"),
+]
+
+
+
+
 //***  Multer configuration  ****/
 
 const configuracionImagen = multer.diskStorage({
@@ -22,8 +34,8 @@ const uploadFile = multer({ storage: configuracionImagen });
 
 router.get('/detail/:id',productsController.detalle_producto);  //products/:id cambio por comentario de jero al final de la clase
 
-router.get('/create',productsController.crear_producto); //products/create
-router.post('/create',/* validaciones ,*/productsController.store); 
+router.get('/create', productsController.crear_producto); //products/create
+router.post('/create', validateCreate, productsController.store); 
 
 router.get('/edit/:id', productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
 router.put('/edit/:id', productsController.update); //products/:id cambio por comentario de jero al final de la clase

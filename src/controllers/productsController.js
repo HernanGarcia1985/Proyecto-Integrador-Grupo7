@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-//const {validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 
@@ -27,19 +27,30 @@ const productsControllers =
     crear_producto: (req, res) => {
 		let promesaCategoria = db.Categoria.findAll();
 		let promesaAnimal = db.Animal.findAll();
+		
 		Promise.all([promesaCategoria,promesaAnimal])
 			.then(function([resultadoCategoria,resultadoAnimal]){
+				console.log(resultadoAnimal);
 				res.render('products/crear_producto',{categoria:resultadoCategoria,animal:resultadoAnimal});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
 			})
 	},
 
    	// Create -  Method to store
 	store: (req, res) => {
 
-		//let errors = validationResult(req);
+		let errors = validationResult(req);
+console.log(errors)
+		if ( errors.isEmpty() ) {
+			
+			
 
-		//if ( errors.isEmpty() ) {
 
+
+			
 		//let nombreImagen = req.file.filename;
 
 		db.Producto.create({
@@ -57,10 +68,10 @@ const productsControllers =
 
 		res.redirect('/'); //Ver de redireccionar al detalle con el producto creado
 
-		//}
-		//else{
-		//	res.render('crear_producto', {errors: errors.array() } ); 
-		//}
+		}
+		else{
+			res.render('crear_producto', {errors: errors.array() } ); 
+		}
 	},
 
     listado_producto: (req, res) => {
