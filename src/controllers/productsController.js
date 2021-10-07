@@ -90,20 +90,27 @@ console.log(errors)
 
     editar_producto:(req, res) => {
 		
-		let productoEncontrado;
+		let promesaCategoria = db.Categoria.findAll();
+		let promesaAnimal = db.Animal.findAll();
+		let promesaProducto = db.Producto.findByPk(req.params.id);
+		
+		Promise.all([promesaCategoria,promesaAnimal, promesaProducto])
+			.then(function([resultadoCategoria,resultadoAnimal,resultadoProducto]){
+				console.log(resultadoAnimal);
+				res.render('products/editar_producto',{categoria:resultadoCategoria,animal:resultadoAnimal, ProductoaEditar:resultadoProducto});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
+			})
 
-		db.Producto.findByPk(req.params.id)
-				.then((producto) =>{
-					productoEncontrado = producto;
-					res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
-				})
-				.catch(function(error){
-					console.log("error!");
-				})
 	},
 
 	// Update - Method to update
 	update: (req, res) => {
+		let errors = validationResult(req);
+console.log(errors)
+		if ( errors.isEmpty() ) {
 
 		db.Producto.update(
 			{name: req.body.name,
@@ -120,8 +127,24 @@ console.log(errors)
 		);
 		
 		res.redirect('/'); //Ver de direccionar al detalle del producto actualizado
-	},
+	}
+	else{
+		let promesaCategoria = db.Categoria.findAll();
+		let promesaAnimal = db.Animal.findAll();
+		let promesaProducto = db.Producto.findByPk(req.params.id);
+		
+		Promise.all([promesaCategoria,promesaAnimal, promesaProducto])
+			.then(function([resultadoCategoria,resultadoAnimal,resultadoProducto]){
+				console.log(resultadoAnimal);
+				res.render('products/editar_producto',{categoria:resultadoCategoria,animal:resultadoAnimal, ProductoaEditar:resultadoProducto, errors: errors.array()});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
+			})
 
+	}
+},
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		
