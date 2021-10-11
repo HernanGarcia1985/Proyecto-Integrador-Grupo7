@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-//const {validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 
@@ -27,19 +27,30 @@ const productsControllers =
     crear_producto: (req, res) => {
 		let promesaCategoria = db.Categoria.findAll();
 		let promesaAnimal = db.Animal.findAll();
+		
 		Promise.all([promesaCategoria,promesaAnimal])
 			.then(function([resultadoCategoria,resultadoAnimal]){
+				console.log(resultadoAnimal);
 				res.render('products/crear_producto',{categoria:resultadoCategoria,animal:resultadoAnimal});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
 			})
 	},
 
    	// Create -  Method to store
 	store: (req, res) => {
 
-		//let errors = validationResult(req);
+		let errors = validationResult(req);
+console.log(errors)
+		if ( errors.isEmpty() ) {
+			
+			
 
-		//if ( errors.isEmpty() ) {
 
+
+			
 		//let nombreImagen = req.file.filename;
 
 		db.Producto.create({
@@ -57,10 +68,10 @@ const productsControllers =
 
 		res.redirect('/'); //Ver de redireccionar al detalle con el producto creado
 
-		//}
-		//else{
-		//	res.render('crear_producto', {errors: errors.array() } ); 
-		//}
+		}
+		else{
+			res.render('crear_producto', {errors: errors.array() } ); 
+		}
 	},
 
     listado_producto: (req, res) => {
@@ -79,20 +90,27 @@ const productsControllers =
 
     editar_producto:(req, res) => {
 		
-		let productoEncontrado;
+		let promesaCategoria = db.Categoria.findAll();
+		let promesaAnimal = db.Animal.findAll();
+		let promesaProducto = db.Producto.findByPk(req.params.id);
+		
+		Promise.all([promesaCategoria,promesaAnimal, promesaProducto])
+			.then(function([resultadoCategoria,resultadoAnimal,resultadoProducto]){
+				console.log(resultadoAnimal);
+				res.render('products/editar_producto',{categoria:resultadoCategoria,animal:resultadoAnimal, ProductoaEditar:resultadoProducto});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
+			})
 
-		db.Producto.findByPk(req.params.id)
-				.then((producto) =>{
-					productoEncontrado = producto;
-					res.render('products/editar_producto',{ProductoaEditar: productoEncontrado});
-				})
-				.catch(function(error){
-					console.log("error!");
-				})
 	},
 
 	// Update - Method to update
 	update: (req, res) => {
+		let errors = validationResult(req);
+console.log(errors)
+		if ( errors.isEmpty() ) {
 
 		db.Producto.update(
 			{name: req.body.name,
@@ -109,8 +127,24 @@ const productsControllers =
 		);
 		
 		res.redirect('/'); //Ver de direccionar al detalle del producto actualizado
-	},
+	}
+	else{
+		let promesaCategoria = db.Categoria.findAll();
+		let promesaAnimal = db.Animal.findAll();
+		let promesaProducto = db.Producto.findByPk(req.params.id);
+		
+		Promise.all([promesaCategoria,promesaAnimal, promesaProducto])
+			.then(function([resultadoCategoria,resultadoAnimal,resultadoProducto]){
+				console.log(resultadoAnimal);
+				res.render('products/editar_producto',{categoria:resultadoCategoria,animal:resultadoAnimal, ProductoaEditar:resultadoProducto, errors: errors.array()});
+			})
+			
+			.catch(function(error){
+				console.log("error!");
+			})
 
+	}
+},
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		
