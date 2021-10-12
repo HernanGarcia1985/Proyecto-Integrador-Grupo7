@@ -43,14 +43,11 @@ const productsControllers =
 	store: (req, res) => {
 
 		let errors = validationResult(req);
-console.log(errors)
+		console.log(errors)
+		console.log(req.file);
+		console.log(req.body);
 		if ( errors.isEmpty() ) {
-			
-			
-
-
-
-			
+	
 		//let nombreImagen = req.file.filename;
 
 		db.Producto.create({
@@ -59,7 +56,7 @@ console.log(errors)
 			price: req.body.price,
 			discount: req.body.discount,
 			description: req.body.description,
-			//image: ruta de la Imagen
+			image: req.file.filename,
 			qty: req.body.qty,
 			//createDate: new Date.getTime, //req.body.createDate, //ver de usar funcion date.now()
 			id_animal: req.body.id_animal,
@@ -70,7 +67,18 @@ console.log(errors)
 
 		}
 		else{
-			res.render('crear_producto', {errors: errors.array() } ); 
+			let promesaCategoria = db.Categoria.findAll();
+			let promesaAnimal = db.Animal.findAll();
+			
+			Promise.all([promesaCategoria,promesaAnimal])
+				.then(function([resultadoCategoria,resultadoAnimal]){
+					console.log(resultadoAnimal);
+					res.render('products/crear_producto',{categoria:resultadoCategoria,animal:resultadoAnimal,errors: errors.array()});
+				})
+				
+				.catch(function(error){
+					console.log("error!");
+				})
 		}
 	},
 
@@ -147,14 +155,20 @@ console.log(errors)
 },
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
+
+		db.Producto.findByPk(req.params.id)
+			.then((producto) =>{
+				fs.unlinkSync(path.join(__dirname, '../../public/img/products/', producto.image));
+			})
+			.catch(function(error){
+				console.log("error!");
+			})
 		
 		db.Producto.destroy({
 			where: {
 				id: req.params.id
 			}
 		})
-		
-		//fs.unlinkSync(path.join(__dirname, '../../public/images/products/', ProductoEncontrado.image));
 
 		res.redirect('/');
 	}

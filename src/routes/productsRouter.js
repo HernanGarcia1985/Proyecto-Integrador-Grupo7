@@ -1,5 +1,5 @@
 const productsController = require('./../controllers/productsController');
-
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
@@ -19,7 +19,7 @@ const validateCreate= [
 
 const configuracionImagen = multer.diskStorage({
     destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
-     cb(null, path.join(__dirname,'../../public/img/productos'));    // Ruta donde almacenamos el archivo/en este caso en una carpeta productos dentro de imagenes
+     cb(null, path.join(__dirname,'../../public/img/products'));    // Ruta donde almacenamos el archivo/en este caso en una carpeta productos dentro de imagenes
     },
     filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
      let imageName =  Date.now() + file.originalname ;   // milisegundos y extensión de archivo original
@@ -35,7 +35,7 @@ const uploadFile = multer({ storage: configuracionImagen });
 router.get('/detail/:id',productsController.detalle_producto);  //products/:id cambio por comentario de jero al final de la clase
 
 router.get('/create', productsController.crear_producto); //products/create
-router.post('/create', validateCreate, productsController.store); 
+router.post('/create', uploadFile.single('imageProduct'), validateCreate, productsController.store); 
 
 router.get('/edit/:id', productsController.editar_producto); //products/:id/edit cambio por comentario de jero al final de la clase
 router.put('/edit/:id', validateCreate, productsController.update); //products/:id cambio por comentario de jero al final de la clase
