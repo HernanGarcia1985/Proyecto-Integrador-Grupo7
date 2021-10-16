@@ -106,15 +106,13 @@ const usersControllers = {
 
 			return res.redirect('/users/login');
 
-		}
-
-		/*
+		},
 
 		logout: (req, res) => {
 			res.clearCookie('userEmail');
 			req.session.destroy();
 			return res.redirect('/');
-		}*/
+		}
 }
 
 
