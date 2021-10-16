@@ -32,9 +32,9 @@ const usersControllers = {
 							delete usuarioLogin.password;
 							req.session.usuarioLogueado = usuarioLogin;
 		
-							//if(req.body.remember_user) {
-							//	res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
-							//} //Opcion de recordar usuario
+							if(req.body.remember_user) {
+								res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+							} //Opcion de recordar usuario
 		
 							return res.redirect('/users/perfil');
 						} 
