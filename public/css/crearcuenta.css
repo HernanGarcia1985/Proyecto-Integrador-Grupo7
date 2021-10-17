@@ -65,12 +65,16 @@
 
 }
 
-.formulario__validacion-estado{
+.formulario__validacion-estado {
 	position: absolute;
 	right: 10px;
 	bottom: 15px;
 	z-index: 100;
 	font-size: 16px;
+	opacity: 0;
+} 
+
+p{
 	opacity: 0;
 }
 
@@ -83,14 +87,6 @@
 	display: none;
 }
 
-.formulario__mensaje-activo{ /*se va a mostrar el mensaje cuando cree la validacion con javaScript*/
-	display: block;
-}
-
-
-.formulario__mensaje p{
-	margin: 0;
-}
 
 .botoncito{
 	background-color: #009cf6;
@@ -126,13 +122,13 @@
 
  /* ----- -----  Estilos para Validacion ----- ----- */
 
- .formulario-correcto .formulario__validacion-estado{
+ .formulario__validacion-estado .fa-check-circle{
 	color: #1ed12d;
 	opacity: 1;
 	/*display: none;*/
  }
 
- .formulario-incorrecto .formulario__validacion-estado{
+ .formulario__validacion-estado .fa-times-circle{
 	 color: #bb2929;
 	 opacity: 1;
  }
