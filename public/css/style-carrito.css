@@ -7,7 +7,7 @@
 
 
 .carrito{
-    width: 75vw;
+    width: 100vw;
     display: flex;
     margin: 5px;
     flex-direction: column;
@@ -34,7 +34,7 @@
 
 #titulo-carrito{
     margin: 10px;
-    font-size: 1em;
+    font-size: 3em;
 }
 
 /*.columna1{
@@ -132,6 +132,14 @@ main div section h6{
 }
 
 #boton-seguir{
+    flex-grow: 0.25;
+    max-width: 150px;
+    margin: 5px 30px;
+    padding: 5px;
+    background-color: #1259c3;
+}
+
+#boton-vaciar{
     flex-grow: 0.25;
     max-width: 150px;
     margin: 5px 30px;
