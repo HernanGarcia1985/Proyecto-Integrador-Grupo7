@@ -40,7 +40,7 @@
 .formulario{
 	width: 100%;
 	background: #fff;
-	border: 2px solid;
+	border: 2px dotted;
 	border-radius: 3px;
 	height: 45px;
 	line-height: 45px;
@@ -78,19 +78,11 @@ p{
 	opacity: 0;
 }
 
-.formulario__mensaje{
-	height: 45px;
-	line-height: 45px;
-	background: #F66060;
-	padding: 0 15px;
-	border-radius: 3px;
-	display: none;
-}
-
 
 .botoncito{
 	background-color: #009cf6;
 	color: white;
+	width: 200px;
 	padding: 7px;
 	border-color: white;
 	display: flex;
@@ -102,7 +94,14 @@ p{
 	cursor: pointer;
 	transition: .1s ease all
  }
-
+ .boton-container{
+	 padding: 20px;
+ }
+ 
+ #parrafo2{
+	padding: 20px;
+	display: flex;
+ }
  .botoncito:hover{
 	box-shadow: 1px 0px 10px rgb(198, 233, 253);
  }
@@ -117,12 +116,7 @@ p{
 	display: none;
  }
 
- .formulario__mensaje-exito h5{
-	
-	
- }	
-
- .formulario__mensaje-exito-activo{
+  .formulario__mensaje-exito-activo{
 	 display: block;
  }
 
@@ -142,6 +136,39 @@ p{
  .formulario-incorrecto .formulario{
 	 border: 2px solid #bb2929;
  }
+ 
+.formulario__mensaje{
+	height: 45px;
+	line-height: 45px;
+	padding: 0 15px;
+	border-radius: 3px;
+	position:relative;
+	display: none;
+}
+
+.fa-exclamation-triangle{
+	position: absolute;
+	font-size: 20px;
+	background-color: #F66060;
+	padding: 10px 10px;
+	margin: 2px 2px;
+
+}
+
+b{
+	font-size: 14px;
+	background-color: #F66060;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* padding: 0 40px 0 10px; */
+	
+}
+.formulario__mensaje-activo{
+	display: block;
+}
+
 
 
 
