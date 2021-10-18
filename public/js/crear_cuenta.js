@@ -1,5 +1,6 @@
 const formulario = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input');
+//const msgexito = document.getElementById('#formulario__mensaje-exito')
 
  const expresiones = {
 	user: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -10,13 +11,14 @@ const inputs = document.querySelectorAll('#form input');
 	telephone: /^\d{7,14}$/ // 7 a 14 numeros.
 } 
 
-/* const campos = {
+ const campos = {
+	
 	name: false,
 	lastName: false,
 	password: false,
 	email: false,
 	telephone: false
-} */
+} 
 
 const validarFormulario = (e) => {
 
@@ -46,6 +48,7 @@ const validarFormulario = (e) => {
 		componente.style.color = "#1ed12d"; //correcto color verde	
 		mensaje.style.opacity=0	
 		//campos=true;	
+		campos[e.target.name]=true;
 	
 	}else{
 		componente.classList.add('fa-times-circle');
@@ -53,6 +56,7 @@ const validarFormulario = (e) => {
 		componente.classList.remove('fa-check-circle');
 		mensaje.style.opacity=1
 		//campos=false;	
+		campos[e.target.name]=false;
 		
 	}
 	
@@ -65,10 +69,15 @@ inputs.forEach((input) => {
     })
 }) 
 
-/* formulario.addEventListener('submit', (e) => {	
+ formulario.addEventListener('submit', (e) => {	
 	e.preventDefault();
 	if(campos.name && campos.lastName && campos.email && campos.telephone && campos.password){
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		document.querySelectorAll('.fa-check-circle').forEach((icono) => {
+			icono.classList.remove('fa-check-circle');
+		});
+
 		formulario.reset();
 	}
 });
- */

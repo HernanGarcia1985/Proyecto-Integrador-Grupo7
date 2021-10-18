@@ -107,14 +107,20 @@ p{
 	box-shadow: 1px 0px 10px rgb(198, 233, 253);
  }
 
- .formulario__mensaje-exito{
+ h5{
 	font-size: 14px;
-	color: #119200;
+	color: #28d406f3;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 0 40px 0 10px;
 	display: none;
  }
+
+ .formulario__mensaje-exito h5{
+	
+	
+ }	
 
  .formulario__mensaje-exito-activo{
 	 display: block;
@@ -136,6 +142,8 @@ p{
  .formulario-incorrecto .formulario{
 	 border: 2px solid #bb2929;
  }
+
+
 
 .item2{
     color:#004360;
