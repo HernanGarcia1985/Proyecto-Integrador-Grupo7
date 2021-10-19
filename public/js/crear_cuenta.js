@@ -76,17 +76,20 @@ inputs.forEach((input) => {
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 3000);
+		}, 5000);
 		document.querySelectorAll('.fa-check-circle').forEach((icono) => {
 			icono.classList.remove('fa-check-circle');
 		});
 
+		formulario.submit();
+		
 		formulario.reset();
 
 		}else {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 		setTimeout(() => {
 			document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-		}, 3000);
+		}, 5000);
+
 	}
 });
