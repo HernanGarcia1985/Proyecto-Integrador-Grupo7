@@ -171,7 +171,114 @@ console.log(errors)
 		})
 
 		res.redirect('/');
-	}
+	},
+
+	todosLosProductos: (req, res) => {
+		let resultado = {
+			link: "http://localhost:3000/API/todosLosProductos",
+			cantidad: 0,
+			data: []
+		}
+
+		db.Producto.findAll()
+				.then((totalDeProductos) => {
+					if(totalDeProductos){
+						resultado.data = totalDeProductos;
+						resultado.cantidad = totalDeProductos.length;
+						res.json(resultado);
+					}
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		},
+
+		todasLasCategorias: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/todasLasCategorias",
+				cantidad: 0,
+				data: []
+			}
+	
+			db.Categoria.findAll()
+					.then((totalDeCategoria) => {
+						if(totalDeCategoria){
+							resultado.data = totalDeCategoria;
+							resultado.cantidad = totalDeCategoria.length;
+							res.json(resultado);
+						}
+					})
+					.catch(function(error){
+						console.log("No se pudo acceder a la base de datos");
+					})
+		},
+
+		productoPorId: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/productoPorId",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Producto.findByPk(req.params.id)
+				.then((producto) => {
+					if(producto){
+						resultado.data.push(producto.dataValues);
+						resultado.cantidad = 1;
+					}
+					res.json(resultado);
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		},
+
+		ultimoProducto: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/ultimoProducto",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Producto.findAll({
+				order: [['id','DESC']],
+				limit: 1
+			})
+				.then((producto) => {
+					if(producto){
+						resultado.data.push(producto[0].dataValues);
+						resultado.cantidad = 1;
+					}
+					res.json(resultado);
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		},
+
+		cantidadProductosPorCategoria: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/cantidadProductosPorCategoria",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Categoria.findAll({
+				attributes: ['typeCategory', [Sequelize.fn('count', Sequelize.col('id_categoria')), 'cantidad']],
+				include:[{association:'productos'}],
+				group: ['typeCategory']
+			})
+				.then((categorias) => {
+					if(categorias){
+						resultado.data = categorias;
+						resultado.cantidad = categorias.length;
+					}
+					res.json(resultado);
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		}
 };
 
 module.exports = productsControllers;
