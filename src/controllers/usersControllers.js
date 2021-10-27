@@ -112,6 +112,78 @@ const usersControllers = {
 			res.clearCookie('userEmail');
 			req.session.destroy();
 			return res.redirect('/');
+		},
+
+		todosLosUsuarios: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/todosLosUsuarios",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Usuario.findAll()
+				.then((totalDeUsuarios) => {
+					if(totalDeUsuarios){
+						for(let i = 0; i<totalDeUsuarios.length; i++){
+							delete totalDeUsuarios[i].dataValues.password;
+							resultado.data.push(totalDeUsuarios[i].dataValues);
+						}
+						//resultado.data = totalDeUsuarios.map(function(usuario){
+						//	delete usuario.password;
+						//	return;
+						//});
+						resultado.cantidad = totalDeUsuarios.length;
+						res.json(resultado);
+					}
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		},
+
+		usuarioPorId: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/usuarioPorId",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Usuario.findByPk(req.params.id)
+				.then((usuario) => {
+					if(usuario){
+						delete usuario.dataValues.password;
+						resultado.data.push(usuario.dataValues);
+						resultado.cantidad = 1;
+					}
+					res.json(resultado);
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
+		},
+
+		ultimoUsuario: (req, res) => {
+			let resultado = {
+				link: "http://localhost:3000/API/ultimoUsuario",
+				cantidad: 0,
+				data: []
+			}
+
+			db.Usuario.findAll({
+				order: [['id','DESC']],
+				limit: 1
+			})
+				.then((usuario) => {
+					if(usuario){
+						delete usuario[0].dataValues.password;
+						resultado.data.push(usuario[0].dataValues);
+						resultado.cantidad = 1;
+					}
+					res.json(resultado);
+				})
+				.catch(function(error){
+					console.log("No se pudo acceder a la base de datos");
+				})
 		}
 }
 

@@ -1,5 +1,6 @@
 const productsRouters = require('./src/routes/productsRouter');
 const usersRouters = require ('./src/routes/usersRouter');
+const apiRouter = require ('./src/routes/apiRouter');
 const mainRouter = require('./src/routes/mainRouter'); // Rutas main
 const express = require('express');
 const app = express();
@@ -21,12 +22,13 @@ app.use(session({secret:'Es un secreto'}));
 
 app.use(cookieParser());
 app.use('/products', productsRouters);  // se concatenan las rutas del primer y segundo parámetro 
-app.use('/users', usersRouters); 
+app.use('/users', usersRouters);
+app.use('/API', apiRouter);
 app.use('/', mainRouter);
 
 
 
-app.listen(process.env.PORT || 3000, function() {
-  console.log("Corriendo servidor en el puerto 3000");
+app.listen(process.env.PORT || 3001, function() {
+  console.log("Corriendo servidor en el puerto 3001");
 });
 
