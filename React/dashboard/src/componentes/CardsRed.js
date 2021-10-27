@@ -3,11 +3,12 @@ import {Card, Typography, CardContent, CardActions} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 
 
-function CardsHeader(props){
+function CardsRed(props){
 
     const useStyles= makeStyles(()=>({
         root:{
             textAlign: 'center',
+            backgroundColor: 'red',
             background: props.color,
             // margin: 5,
                
@@ -45,4 +46,4 @@ function CardsHeader(props){
     
 };
 
-export default CardsHeader;
+export default CardsRed;

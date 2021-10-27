@@ -2,7 +2,7 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Toolbar, IconButton, Typography} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import logo from '../assets/img/notebook-mano.jpg';
+import logo from '../assets/img/logo.jpeg';
 
 const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
     root:{
@@ -15,7 +15,7 @@ const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
         flexGrow: 1
     },
     imagen:{
-        borderRadius: '20%'
+        borderRadius: '5%'
     }
 }));
 
@@ -33,7 +33,7 @@ function Navbar(props){
                         <MenuIcon />
                     </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            AndreaScript
+                            NUESTRAS ESTADÍSTICAS
                         </Typography>
                     <IconButton color="inherit">
                          <img src={logo} width="80px" height="60px" className={classes.imagen} alt="Imagen de una compu"/>

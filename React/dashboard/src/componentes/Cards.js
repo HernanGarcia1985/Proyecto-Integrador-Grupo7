@@ -4,8 +4,9 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles= makeStyles(()=>({
     root:{
+
         textAlign: 'center',
-        backgroundColor: 'rgba(73,155,234,1)',
+        backgroundColor: 'orange',
         marginLeft: 30
     },
     texto:{
