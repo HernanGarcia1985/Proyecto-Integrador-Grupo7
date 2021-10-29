@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {  useEffect, useState} from 'react';
 import {Card, Typography, CardContent, CardActions} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 
 
+
+
+
+
 function CardsHeader(props){
+   
+    
 
     const useStyles= makeStyles(()=>({
         root:{
             textAlign: 'center',
             background: props.color,
             // margin: 5,
-               
+            marginTop: 5         
         },
         texto:{
-            fontSize: 25,
+            fontSize: 18,
             color: props.font
         },
         titulo:{
             fontWeight: 'bold',
-            fontSize: 30,
+            fontSize: 22,
             color: props.font
         },
        

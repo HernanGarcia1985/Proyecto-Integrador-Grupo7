@@ -4,9 +4,8 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles= makeStyles(()=>({
     root:{
-
         textAlign: 'center',
-        backgroundColor: 'orange',
+        backgroundColor: 'rgba(73,155,234,1)',
         marginLeft: 30
     },
     texto:{
@@ -26,6 +25,7 @@ function Cards(props) {
     return (
         <Card className={classes.root}>
             <CardContent>
+                {props.icono}
                 <Typography  className={classes.titulo}>
                 {props.titulo}
                 </Typography>

@@ -15,7 +15,7 @@ const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
         flexGrow: 1
     },
     imagen:{
-        borderRadius: '5%'
+        borderRadius: '10%'
     }
 }));
 
@@ -33,10 +33,10 @@ function Navbar(props){
                         <MenuIcon />
                     </IconButton>
                         <Typography variant="h6" className={classes.title}>
-                            NUESTRAS ESTADÍSTICAS
+                            NUESTRAS ESTADISTICAS
                         </Typography>
                     <IconButton color="inherit">
-                         <img src={logo} width="80px" height="60px" className={classes.imagen} alt="Imagen de una compu"/>
+                         <img src={logo} width="80px" height="60px" className={classes.imagen} alt="Logo"/>
                 
                     </IconButton>
                 </Toolbar>

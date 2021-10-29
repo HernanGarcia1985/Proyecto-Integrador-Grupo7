@@ -116,7 +116,7 @@ const usersControllers = {
 
 		todosLosUsuarios: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/todosLosUsuarios",
+				link: "http://localhost:3001/API/todosLosUsuarios",
 				cantidad: 0,
 				data: []
 			}
@@ -132,7 +132,7 @@ const usersControllers = {
 						//	delete usuario.password;
 						//	return;
 						//});
-						resultado.cantidad = totalDeUsuarios.length;
+						resultado.cantidad = totalDeUsuarios.length;				
 						res.json(resultado);
 					}
 				})

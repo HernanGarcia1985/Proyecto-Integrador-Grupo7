@@ -10,6 +10,7 @@ const session = require('express-session');
 const cookieParser = require ('cookie-parser');
 
 
+// app.use(cors)
 app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
