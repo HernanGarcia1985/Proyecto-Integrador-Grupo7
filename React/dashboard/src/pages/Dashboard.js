@@ -19,6 +19,11 @@ var traerProductosUrl = 'http://localhost:3001/API/todosLosProductos';
 
 var traerCategoriasUrl = 'http://localhost:3001/API/todasLasCategorias';
 
+const traerUltimoUsuario = 'http://localhost:3001/API/ultimoUsuario';
+
+const traerUltimoProducto = 'http://localhost:3001/API/ultimoProducto';
+
+const cantidadProductosPorCategoria = 'http://localhost:3001/API/cantidadProductosPorCategoria';
 
 
 const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
@@ -47,7 +52,9 @@ function Dashboard(props){
     const [cantidadUsuarios, setCantidadUsuarios] = useState(0);
     const [cantidadProductos, setCantidadProductos] = useState(0);
     const [cantidadCategorias, setCantidadCategorias] = useState(0);
-    
+    const [ultimoUsuario, setUltimoUsuario] = useState(0);
+    const [ultimoProducto, setUltimoProducto] = useState(0);
+    const [productosPorCategoria, setProductosPorCategoria] = useState(0);
     
 
 
@@ -73,15 +80,50 @@ function Dashboard(props){
 
         
 
-        useEffect(() => {
-              
-              fetch(traerCategoriasUrl)
-            .then(response => response.json() )      
-            .then(data =>  setCantidadCategorias(data.cantidad))
+    useEffect(() => {
             
-            .catch(e =>console.log(e))
-            },[]);
+            fetch(traerCategoriasUrl)
+        .then(response => response.json() )      
+        .then(data =>  setCantidadCategorias(data.cantidad))
+        
+        .catch(e =>console.log(e))
+        },[]);
+
+
+    useEffect(() => {
+        
+        fetch(traerUltimoUsuario)
+        .then(response => response.json() )      
+        .then(function(data){
+            setUltimoUsuario("Id: " + data.data[0].id + " " + data.data[0].name + " " + data.data[0].lastName)
+        })
+        
+        .catch(e =>console.log(e))
+        },[]);
   
+    
+    useEffect(() => {
+    
+        fetch(traerUltimoProducto)
+        .then(response => response.json() )      
+        .then(function(data){
+            setUltimoProducto("Id: " + data.data[0].id + " " + data.data[0].name);
+        })
+        
+        .catch(e =>console.log(e))
+        },[]);
+
+
+    useEffect(() => {
+
+        fetch(cantidadProductosPorCategoria)
+        .then(response => response.json() )      
+        .then(function(data){
+            setProductosPorCategoria(data.data[0].typeCategory + ": " + data.data[0].cantidad);
+        })
+        
+        .catch(e =>console.log(e))
+        },[]);
 
 
     //instanciamos los estilos dentro de la funcion
@@ -112,15 +154,15 @@ function Dashboard(props){
 
                 <Grid container spacing={4} className={classes.container} xs={12} sm={12} md={6} lg={6} xl={6}>
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards icono={<EmojiPeopleIcon className={classes.iconos}/>} titulo="ULTIMO USUARIO CREADO" texto="5665"/>
+                    <Cards icono={<EmojiPeopleIcon className={classes.iconos}/>} titulo="ULTIMO USUARIO CREADO" texto={ultimoUsuario}/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards icono={<LastPageIcon className={classes.iconos}/>} titulo="ULTIMO PRODUCTO CREADO" texto="111,092"/>
+                    <Cards icono={<LastPageIcon className={classes.iconos}/>} titulo="ULTIMO PRODUCTO CREADO" texto={ultimoProducto}/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="CATEGORIAS" texto="2,504 horas"/>
+                    <Cards titulo="CATEGORIAS" texto={productosPorCategoria}/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
