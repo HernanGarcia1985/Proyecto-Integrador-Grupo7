@@ -1,4 +1,4 @@
-import React, {  useEffect, useState} from 'react';
+import React, {  useEffect, useState} from 'react'; //IMPORTANDO HOOKS 
 import {Grid} from '@material-ui/core'; //importamos la librería que se instaló
 import {makeStyles} from '@material-ui/core/styles'; //importamos paquetes styles
 import Navbar from '../componentes/Navbar';
@@ -44,14 +44,14 @@ const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
 function Dashboard(props){
 
 
-    const [cantidadUsuarios, setCantidadUsuarios] = useState(0);
+    const [cantidadUsuarios, setCantidadUsuarios] = useState(0); //USAMOS HOOKS USESTATE
     const [cantidadProductos, setCantidadProductos] = useState(0);
     const [cantidadCategorias, setCantidadCategorias] = useState(0);
     
     
 
 
-    useEffect(() => {
+    useEffect(() => { //SIRVE PARA GESTIONAR EL CICLO DE VIDA DEL COMPONENTE
         
         fetch(traerDatosUrl)
       .then(response => response.json() )            
@@ -69,7 +69,7 @@ function Dashboard(props){
         .then(data =>  setCantidadProductos(data.cantidad))
         
         .catch(e =>console.log(e))
-        },[]);
+        },[]);// CON ESTE ARRAY VACIO LE INDICAMOS AL HOOK QUE NO LE HAGA SEGUIMIENTO A NINGUNA DEPENDENCIA
 
         
 
