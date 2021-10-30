@@ -15,7 +15,7 @@ router.get('/todosLosUsuarios',cors(corsOptions),usersControllers.todosLosUsuari
 
 router.get('/usuarioPorId/:id',usersControllers.usuarioPorId);
 
-router.get('/ultimoUsuario', usersControllers.ultimoUsuario);
+router.get('/ultimoUsuario',cors(corsOptions), usersControllers.ultimoUsuario);
 
 router.get('/todosLosProductos',cors(corsOptions),productsController.todosLosProductos);
 
@@ -23,8 +23,8 @@ router.get('/todasLasCategorias',cors(corsOptions),productsController.todasLasCa
 
 router.get('/productoPorId/:id',productsController.productoPorId);
 
-router.get('/cantidadProductosPorCategoria',productsController.cantidadProductosPorCategoria);
+router.get('/cantidadProductosPorCategoria', cors(corsOptions), productsController.cantidadProductosPorCategoria);
 
-router.get('/ultimoProducto', productsController.ultimoProducto);
+router.get('/ultimoProducto', cors(corsOptions), productsController.ultimoProducto);
 
 module.exports = router;
