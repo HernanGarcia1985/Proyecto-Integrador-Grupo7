@@ -175,7 +175,7 @@ console.log(errors)
 
 	todosLosProductos: (req, res) => {
 		let resultado = {
-			link: "http://localhost:3000/API/todosLosProductos",
+			link: "http://localhost:3001/API/todosLosProductos",
 			cantidad: 0,
 			data: []
 		}
@@ -195,7 +195,7 @@ console.log(errors)
 
 		todasLasCategorias: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/todasLasCategorias",
+				link: "http://localhost:3001/API/todasLasCategorias",
 				cantidad: 0,
 				data: []
 			}
@@ -215,7 +215,7 @@ console.log(errors)
 
 		productoPorId: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/productoPorId",
+				link: "http://localhost:3001/API/productoPorId",
 				cantidad: 0,
 				data: []
 			}
@@ -235,7 +235,7 @@ console.log(errors)
 
 		ultimoProducto: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/ultimoProducto",
+				link: "http://localhost:3001/API/ultimoProducto",
 				cantidad: 0,
 				data: []
 			}
@@ -258,7 +258,7 @@ console.log(errors)
 
 		cantidadProductosPorCategoria: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/cantidadProductosPorCategoria",
+				link: "http://localhost:3001/API/cantidadProductosPorCategoria",
 				cantidad: 0,
 				data: []
 			}
