@@ -143,7 +143,7 @@ const usersControllers = {
 
 		usuarioPorId: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/usuarioPorId",
+				link: "http://localhost:3001/API/usuarioPorId",
 				cantidad: 0,
 				data: []
 			}
@@ -164,7 +164,7 @@ const usersControllers = {
 
 		ultimoUsuario: (req, res) => {
 			let resultado = {
-				link: "http://localhost:3000/API/ultimoUsuario",
+				link: "http://localhost:3001/API/ultimoUsuario",
 				cantidad: 0,
 				data: []
 			}
