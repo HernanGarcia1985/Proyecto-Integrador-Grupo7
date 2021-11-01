@@ -1,6 +1,7 @@
 import React, {  useEffect, useState} from 'react';
 import {Grid} from '@material-ui/core'; //importamos la librería que se instaló
 import {makeStyles} from '@material-ui/core/styles'; //importamos paquetes styles
+import {List, ListItem} from '@material-ui/core';
 import Navbar from '../componentes/Navbar';
 import 'fontsource-roboto';
 import '../assets/css/Dashboard.css';
@@ -45,6 +46,15 @@ const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
     },
     body:{
         backgroundColor: "#EEEEEE"
+    },
+    list:{
+        textAlign: 'center',
+        backgroundColor: 'rgba(73,155,234,1)',
+        marginLeft: 30
+    },
+    texto:{
+        fontSize: 18,
+        color: 'white'
     }
 }));
 
@@ -177,24 +187,24 @@ function Dashboard(props){
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <Cards titulo="CATEGORIAS"></Cards>
-                        <ul>
+                    <List className={classes.list}> 
                             {
                                 productosPorCategoria.map((categoria,i) =>{
-                                    return <li key={i}>{categoria.typeCategory}: {categoria.cantidad}</li>
+                                    return <ListItem className={classes.texto} key={i}>{categoria.typeCategory}: {categoria.cantidad}</ListItem>
                                 })
                             }
-                        </ul>
+                    </List>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="LISTADO DE PRODUCTOS" />
-                        <ul>
+                    <Cards titulo="LISTADO DE PRODUCTOS" ></Cards>
+                    <List className={classes.list}>
                             {
                                 listadoDeProductos.map((producto,i) =>{
-                                    return <li key={i}>{producto.name} ${producto.price} Qty: {producto.qty}</li>
+                                    return <ListItem className={classes.texto} key={i}>{producto.name} ${producto.price} Qty: {producto.qty}</ListItem>
                                 })
                             }
-                        </ul>
+                    </List>
                     </Grid>
 
                 </Grid>
