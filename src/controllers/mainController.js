@@ -1,15 +1,25 @@
 const fs = require('fs');
 const path = require('path');
 //const {validationResult} = require('express-validator');
-
-const productsFilePath = path.join(__dirname, '../data/productos-pet.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const db = require('../database/models');
+const Sequelize = require('sequelize');
 
 const mainControllers = 
 {
     	index: (req, res) => {	
-                const lastFour =  products.slice(-4); //saca los ultimos 4 productos insertados en el Json para mostrarlos como novedad               
-                res.render('index',{novedades: lastFour});
+            let lastFour;
+            db.Producto.findAll({
+                order: [['id','DESC']],
+				limit: 4
+            }) //leo los productos de la bd
+                .then((todosLosProdcutos) =>{
+                    lastFour = todosLosProdcutos;
+                    res.render('index',{novedades: lastFour}); //saca los ultimos 4 productos para mostrarlos como novedad
+                })
+                .catch(function(error){
+                    console.log("error!");
+                }) 
+                
         },
 
         carrito: (req, res) => {	

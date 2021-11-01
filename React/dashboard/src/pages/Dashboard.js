@@ -25,6 +25,8 @@ const traerUltimoProducto = 'http://localhost:3001/API/ultimoProducto';
 
 const cantidadProductosPorCategoria = 'http://localhost:3001/API/cantidadProductosPorCategoria';
 
+const todosLosProductos = 'http://localhost:3001/API/todosLosProductos';
+
 
 const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
     root:{
@@ -54,8 +56,8 @@ function Dashboard(props){
     const [cantidadCategorias, setCantidadCategorias] = useState(0);
     const [ultimoUsuario, setUltimoUsuario] = useState(0);
     const [ultimoProducto, setUltimoProducto] = useState(0);
-    const [productosPorCategoria, setProductosPorCategoria] = useState(0);
-    
+    const [productosPorCategoria, setProductosPorCategoria] = useState([]);
+    const [listadoDeProductos, setListadoDeProductos] = useState([]);
 
 
     useEffect(() => { //SIRVE PARA GESTIONAR EL CICLO DE VIDA DEL COMPONENTE
@@ -119,7 +121,19 @@ function Dashboard(props){
         fetch(cantidadProductosPorCategoria)
         .then(response => response.json() )      
         .then(function(data){
-            setProductosPorCategoria(data.data[0].typeCategory + ": " + data.data[0].cantidad);
+            setProductosPorCategoria(data.data);
+        })
+        
+        .catch(e =>console.log(e))
+        },[]);
+
+
+    useEffect(() => {
+
+        fetch(todosLosProductos)
+        .then(response => response.json() )      
+        .then(function(data){
+            setListadoDeProductos(data.data);
         })
         
         .catch(e =>console.log(e))
@@ -162,11 +176,25 @@ function Dashboard(props){
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="CATEGORIAS" texto={productosPorCategoria}/>
+                    <Cards titulo="CATEGORIAS"></Cards>
+                        <ul>
+                            {
+                                productosPorCategoria.map((categoria,i) =>{
+                                    return <li key={i}>{categoria.typeCategory}: {categoria.cantidad}</li>
+                                })
+                            }
+                        </ul>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="LISTADO DE PRODUCTOS" texto="14.2%"/>
+                    <Cards titulo="LISTADO DE PRODUCTOS" />
+                        <ul>
+                            {
+                                listadoDeProductos.map((producto,i) =>{
+                                    return <li key={i}>{producto.name} ${producto.price} Qty: {producto.qty}</li>
+                                })
+                            }
+                        </ul>
                     </Grid>
 
                 </Grid>
