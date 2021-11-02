@@ -19,7 +19,7 @@ const validateCreate= [
 
 const configuracionImagen = multer.diskStorage({
     destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
-     cb(null, path.join(__dirname,'../../public/img/products'));    // Ruta donde almacenamos el archivo/en este caso en una carpeta productos dentro de imagenes
+     cb(null, path.join(__dirname,'../../public/img'));    // Ruta donde almacenamos el archivo/en este caso en una carpeta productos dentro de imagenes
     },
     filename: function(req, file, cb) {          // request, archivo y callback que almacena archivo en destino
      let imageName =  Date.now() + file.originalname ;   // milisegundos y extensión de archivo original

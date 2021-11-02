@@ -56,7 +56,7 @@ const productsControllers =
 			price: req.body.price,
 			discount: req.body.discount,
 			description: req.body.description,
-			image: req.file.filename,
+			image: "/img/" + req.file.filename,
 			qty: req.body.qty,
 			//createDate: new Date.getTime, //req.body.createDate, //ver de usar funcion date.now()
 			id_animal: req.body.id_animal,
