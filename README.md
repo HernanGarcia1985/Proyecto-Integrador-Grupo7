@@ -1,7 +1,7 @@
 # Proyecto-Integrador-Grupo7
 
 ## Temática y descripción del sitio:
-Pet Friendly Market es una página web que cuenta con una tienda en línea. Esta tienda se encarga de recopilar pedidos que hacen los usuarios, a través de una carrito de compras.
+Pet Friendly Market es un sitio web que cuenta con una tienda en línea. Esta tienda se encarga de recopilar pedidos que hacen los usuarios, a través de una carrito de compras.
 Es una tienda exclusivamente dedicada a ser un nexo entre vendedores (marcas) y  público consumidor de artículos relacionados a las mascotas, desde alimentos hasta accesorios. 
 Su objetivo es ofrecer una mejor experiencia al usuario o cliente, para que logre concretar su compra sin mayor contratiempo.
 Esto se logrará implementando un catálogo detallado con característica, imágenes y precio de cada producto; además de formas de pago.
