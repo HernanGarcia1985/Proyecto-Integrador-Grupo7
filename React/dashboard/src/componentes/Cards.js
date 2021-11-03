@@ -16,12 +16,25 @@ const useStyles= makeStyles(()=>({
         fontWeight: 'bold',
         fontSize: 20,
         color: 'white'
+    },
+    imagen:{
+        width: '95%',
+        height: '25vh',
+        margin: '5px auto',
+        objectFit: 'fill',
+        maxWidth: '50%',
+        maxHeight: '70%',
     }
     }));
 
 function Cards(props) {
 
     const classes=useStyles();
+    let imgComponent = <span/>    
+    if (props.imagen!==undefined && props.imagen!==""){
+        console.log("PEPE>>"+props.imagen)
+        imgComponent = <img className={classes.imagen} src={props.imagen} alt=""></img>
+    }
     return (
         <Card className={classes.root}>
             <CardContent>
@@ -33,7 +46,9 @@ function Cards(props) {
                 <Typography  className={classes.texto}>
                 {props.texto}
                 </Typography>
-            </CardContent>
+                
+            </CardContent>            
+            {imgComponent}
         </Card>
     );
 }

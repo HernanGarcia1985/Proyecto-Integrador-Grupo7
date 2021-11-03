@@ -3,6 +3,7 @@ import {Grid} from '@material-ui/core'; //importamos la librerÃ­a que se instalÃ
 import {makeStyles} from '@material-ui/core/styles'; //importamos paquetes styles
 import {List, ListItem} from '@material-ui/core';
 import Navbar from '../componentes/Navbar';
+
 import 'fontsource-roboto';
 import '../assets/css/Dashboard.css';
 import PeopleIcon from '@material-ui/icons/People';
@@ -50,7 +51,9 @@ const useStyles = makeStyles(()  => ({ //creacion de estilos PASO I
     list:{
         textAlign: 'center',
         backgroundColor: 'rgba(73,155,234,1)',
-        marginLeft: 30
+        marginLeft: 30,
+        
+
     },
     texto:{
         fontSize: 18,
@@ -68,6 +71,7 @@ function Dashboard(props){
     const [ultimoProducto, setUltimoProducto] = useState(0);
     const [productosPorCategoria, setProductosPorCategoria] = useState([]);
     const [listadoDeProductos, setListadoDeProductos] = useState([]);
+    const [imagenUltimoProducto, setimagenUltimoProducto] = useState("");
 
 
     useEffect(() => { //SIRVE PARA GESTIONAR EL CICLO DE VIDA DEL COMPONENTE
@@ -120,6 +124,8 @@ function Dashboard(props){
         .then(response => response.json() )      
         .then(function(data){
             setUltimoProducto("Id: " + data.data[0].id + " " + data.data[0].name);
+            setimagenUltimoProducto("http://localhost:3001"+data.data[0].image);
+          
         })
         
         .catch(e =>console.log(e))
@@ -179,10 +185,16 @@ function Dashboard(props){
                 <Grid container spacing={4} className={classes.container} xs={12} sm={12} md={6} lg={6} xl={6}>
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
                     <Cards icono={<EmojiPeopleIcon className={classes.iconos}/>} titulo="ULTIMO USUARIO CREADO" texto={ultimoUsuario}/>
+                    
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards icono={<LastPageIcon className={classes.iconos}/>} titulo="ULTIMO PRODUCTO CREADO" texto={ultimoProducto}/>
+                    <Cards icono={<LastPageIcon className={classes.iconos}/>} titulo="ULTIMO PRODUCTO CREADO" texto={ultimoProducto} imagen={imagenUltimoProducto}/>
+                   
+                    <img src='../assets/img/logo.jpeg' alt=''>
+                      
+                    </img>
+                    
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
@@ -213,6 +225,7 @@ function Dashboard(props){
                 <Grid item xs={12} sm={12} md={5} lg={5} xl={5} className={classes.containerGrafica}>
                 <Graphics />
                 </Grid>
+              
 
 
 
