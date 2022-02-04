@@ -7,4 +7,6 @@ router.get('/',mainController.index);
 
 router.get('/carrito',mainController.carrito);
 
+router.post('/checkout',mainController.mercadopago);
+
 module.exports = router;
