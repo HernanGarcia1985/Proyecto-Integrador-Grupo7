@@ -31,7 +31,9 @@
                 <h4 id="total"></h4>
             </section>
             <section class="pagar">
-                <button id="boton-pagar" class="btn btn-info">Pagar</button>
+                <form action="/checkout" method="POST">
+                <button type="submit" id="boton-pagar" class="btn btn-info">Pagar</button>
+                </form>
                 <a href="/"><button id="boton-seguir" class="btn btn-success">Seguir comprando</button></a><br>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar Carrito</button>
             </section>
